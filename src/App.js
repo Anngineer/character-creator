@@ -1,24 +1,47 @@
-import logo from './logo.svg';
-import './App.css';
+import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { useState } from "react";
+import "./App.css";
+import Footer from "./Footer";
+import SideMenu from "./SideMenu";
+import Home from "./Home";
+import RacePage from "./RacePage";
+import ClassPage from "./ClassPage";
 
 function App() {
+  const [activeItem, setActiveItem] = useState(null);
+  function handleMenuClick(e, value) {
+    setActiveItem(value);
+  }
   return (
-    <div className="App">
-      <header className="App-header">
-        <img src={logo} className="App-logo" alt="logo" />
-        <p>
-          Edit <code>src/App.js</code> and save to reload.
-        </p>
-        <a
-          className="App-link"
-          href="https://reactjs.org"
-          target="_blank"
-          rel="noopener noreferrer"
-        >
-          Learn React
-        </a>
-      </header>
-    </div>
+    <Router>
+      <div className="App">
+        <div className="main-section">
+          <SideMenu handleMenuClick={handleMenuClick} activeItem={activeItem} />
+          <div className="content">
+            <Switch />
+            <Route exact path="/">
+              <Home activeItem={activeItem} setActiveItem={setActiveItem} />
+            </Route>
+            <Route exact path="/race">
+              <RacePage activeItem={activeItem} setActiveItem={setActiveItem} />
+            </Route>
+            <Route path="/classes">
+              <ClassPage
+                activeItem={activeItem}
+                setActiveItem={setActiveItem}
+              />
+            </Route>
+            <Route path="/ability">
+              <div>Ability</div>
+            </Route>
+            <Route path="/description">
+              <div>Descriptions</div>
+            </Route>
+          </div>
+        </div>
+        <Footer />
+      </div>
+    </Router>
   );
 }
 

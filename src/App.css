@@ -1,38 +1,141 @@
-.App {
-  text-align: center;
+* {
+  margin: 0;
+  padding: 0;
+  /* max-width: 2000px; */
 }
 
-.App-logo {
-  height: 40vmin;
-  pointer-events: none;
+*,
+*::before,
+*::after {
+  -webkit-box-sizing: inherit;
+          box-sizing: inherit;
 }
 
-@media (prefers-reduced-motion: no-preference) {
-  .App-logo {
-    animation: App-logo-spin infinite 20s linear;
-  }
-}
-
-.App-header {
-  background-color: #282c34;
-  min-height: 100vh;
-  display: flex;
-  flex-direction: column;
-  align-items: center;
-  justify-content: center;
-  font-size: calc(10px + 2vmin);
+html,
+body {
+  background-color: #080a21;
   color: white;
+  font-size: 1rem;
+  font-family: "Source Sans Pro", sans-serif;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  scroll-behavior: smooth;
+  /*This will make it so when you click on a link, 
+        it will scroll to that spot rather than jump*/
+  margin-left: auto;
+  margin-right: auto;
 }
 
-.App-link {
-  color: #61dafb;
+.main-section {
+  background-image: url("./images/bg14.jpg");
+  background-position: top -160px left;
+  background-size: 900px 900px;
+  background-repeat: no-repeat;
+  padding: 2rem;
+  position: relative;
+  height: 200vh;
+  min-height: 540px;
+  max-height: 3000px;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
 }
 
-@keyframes App-logo-spin {
-  from {
-    transform: rotate(0deg);
-  }
-  to {
-    transform: rotate(360deg);
+@media (min-width: 500px) {
+  .main-section {
+    -webkit-box-orient: horizontal;
+    -webkit-box-direction: normal;
+        -ms-flex-direction: row;
+            flex-direction: row;
   }
 }
+
+@media (min-width: 800px) {
+  .main-section {
+    background-position: top -200px left;
+    background-size: 1600px 1600px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .main-section {
+    background-size: 3200px 3200px;
+    background-position: top -255px left -300px;
+  }
+}
+
+.breadcrumbMenu {
+  color: #ebe2d5;
+  /* background-color: rgb(235, 226, 213); */
+  width: 100%;
+  padding: 1rem;
+  text-align: left;
+}
+
+.breadcrumbMenu a.section {
+  color: #ebe2d5;
+}
+
+i.right.chevron.icon.divider {
+  color: #96928d;
+}
+
+i.right.arrow.icon.divider {
+  color: #d6cec3;
+}
+
+.content {
+  padding: 2rem;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+.accordian,
+.accordian .title {
+  text-align: left;
+}
+
+.ui.accordion .accordion .title,
+.ui.accordion .title {
+  text-align: left;
+}
+
+.ClassAccordian {
+  text-align: left;
+  color: black;
+}
+
+@media (max-width: 900px) {
+  div.ui.inverted.pointing.secondary.vertical.menu {
+    width: 100px;
+  }
+  a.item {
+    width: 100px;
+  }
+}
+
+.footer-section {
+  padding: 1rem;
+  background-color: #080a21;
+  color: #e2e9f3;
+  min-height: 20rem;
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: vertical;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: column;
+          flex-direction: column;
+  -webkit-box-align: end;
+      -ms-flex-align: end;
+          align-items: flex-end;
+  -webkit-box-pack: end;
+      -ms-flex-pack: end;
+          justify-content: flex-end;
+}
+/*# sourceMappingURL=App.css.map */

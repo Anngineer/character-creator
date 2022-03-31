@@ -1,0 +1,122 @@
+* {
+  margin: 0;
+  padding: 0;
+  /* max-width: 2000px; */
+}
+*,
+*::before,
+*::after {
+  box-sizing: inherit;
+}
+html,
+body {
+  background-color: #080a21;
+  color: white;
+
+  font-size: 1rem;
+  font-family: "Source Sans Pro", sans-serif;
+  box-sizing: border-box;
+  scroll-behavior: smooth; /*This will make it so when you click on a link, 
+        it will scroll to that spot rather than jump*/
+
+  margin-left: auto;
+  margin-right: auto;
+}
+
+.main-section {
+  background-image: url("./images/bg14.jpg");
+  background-position: top -160px left;
+  background-size: 900px 900px;
+  background-repeat: no-repeat;
+  padding: 2rem;
+  position: relative;
+  height: 200vh;
+  min-height: 540px;
+  max-height: 3000px;
+
+  display: flex;
+  flex-direction: column;
+}
+
+@media (min-width: 500px) {
+  .main-section {
+    flex-direction: row;
+  }
+}
+@media (min-width: 800px) {
+  .main-section {
+    background-position: top -200px left;
+    background-size: 1600px 1600px;
+  }
+}
+
+@media (min-width: 1400px) {
+  .main-section {
+    background-size: 3200px 3200px;
+    background-position: top -255px left -300px;
+  }
+}
+
+.breadcrumbMenu {
+  color: rgb(235, 226, 213);
+  /* background-color: rgb(235, 226, 213); */
+  width: 100%;
+  padding: 1rem;
+  text-align: left;
+}
+.breadcrumbMenu a.section {
+  color: rgb(235, 226, 213);
+}
+i.right.chevron.icon.divider {
+  color: rgb(150, 146, 141);
+}
+i.right.arrow.icon.divider {
+  color: rgb(214, 206, 195);
+}
+
+.content {
+  padding: 2rem;
+  display: inline-block;
+  text-align: center;
+  width: 100%;
+}
+
+// Race Accordian
+.accordian,
+.accordian .title {
+  text-align: left;
+}
+
+// .ui.styled.accordion,
+// .ui.styled.accordion .accordion {
+//   background: none !important;
+// }
+.ui.accordion .accordion .title,
+.ui.accordion .title {
+  text-align: left;
+}
+
+.ClassAccordian {
+  text-align: left;
+  color: black;
+}
+
+@media (max-width: 900px) {
+  div.ui.inverted.pointing.secondary.vertical.menu {
+    width: 100px;
+  }
+  a.item {
+    width: 100px;
+  }
+}
+
+.footer-section {
+  padding: 1rem;
+  background-color: #080a21;
+  color: #e2e9f3;
+  min-height: 20rem;
+  display: flex;
+  flex-direction: column;
+  align-items: flex-end;
+  justify-content: flex-end;
+}
