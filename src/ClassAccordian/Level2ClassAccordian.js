@@ -92,7 +92,7 @@ const Level2ClassAccordian = ({
               {/* <p>Content 2.B</p> */}
               {subclassError && <p> {errorStatement}</p>}
               {isSubclassPending && <p>{loadingStatement}</p>}
-              {subclassData && (
+              {classData && subclassData && (
                 <div className="class-qualities">
                   <p>
                     <b>

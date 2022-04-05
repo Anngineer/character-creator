@@ -6,6 +6,7 @@ import SideMenu from "./SideMenu";
 import Home from "./Home";
 import RacePage from "./RacePage";
 import ClassPage from "./ClassPage";
+import AbilityPage from "./AbilityPage";
 
 function App() {
   const [activeItem, setActiveItem] = useState(null);
@@ -32,10 +33,13 @@ function App() {
               />
             </Route>
             <Route path="/ability">
-              <div>Ability</div>
+              <AbilityPage
+                activeItem={activeItem}
+                setActiveItem={setActiveItem}
+              />
             </Route>
-            <Route path="/description">
-              <div>Descriptions</div>
+            <Route path="/character">
+              <div>Character Sheet</div>
             </Route>
           </div>
         </div>

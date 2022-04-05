@@ -35,17 +35,17 @@ function SideMenu(props) {
         value="ability"
         name="ability"
         active={activeItem === "ability"}
-        onClick={(e) => handleMenuClick(e, "ability")}
-        as={Link}
-        to="/ability"
+        // onClick={(e) => handleMenuClick(e, "ability")}
+        // as={Link}
+        // to="/ability"
       />
       <Menu.Item
-        value="description"
-        name="description"
-        active={activeItem === "description"}
-        onClick={(e) => handleMenuClick(e, "description")}
-        as={Link}
-        to="/description"
+        value="character"
+        name="character"
+        active={activeItem === "character"}
+        // onClick={(e) => handleMenuClick(e, "character")}
+        // as={Link}
+        // to="/character"
       />
     </Menu>
   );

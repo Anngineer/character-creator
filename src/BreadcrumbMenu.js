@@ -44,9 +44,9 @@ const BreadcrumbMenu = ({ activeItem, setActiveItem }) => {
       </Breadcrumb.Section>
       <Breadcrumb.Divider icon="right chevron" />
       <Breadcrumb.Section
-        as={Link}
-        to="/race"
-        onClick={() => setActiveItem("race")}
+      // as={Link}
+      // to="/race"
+      // onClick={() => setActiveItem("race")}
       >
         Race
       </Breadcrumb.Section>
@@ -71,17 +71,17 @@ const BreadcrumbMenu = ({ activeItem, setActiveItem }) => {
       </Breadcrumb.Section>
       <Breadcrumb.Divider icon="right chevron" />
       <Breadcrumb.Section
-        as={Link}
-        to="/race"
-        onClick={() => setActiveItem("race")}
+      // as={Link}
+      // to="/race"
+      // onClick={() => setActiveItem("race")}
       >
         Race
       </Breadcrumb.Section>
       <Breadcrumb.Divider icon="right arrow" />
       <Breadcrumb.Section
-        as={Link}
-        to="/classes"
-        onClick={() => setActiveItem("classes")}
+      // as={Link}
+      // to="/classes"
+      // onClick={() => setActiveItem("classes")}
       >
         Classes
       </Breadcrumb.Section>
@@ -95,7 +95,7 @@ const BreadcrumbMenu = ({ activeItem, setActiveItem }) => {
       </Breadcrumb.Section>
     </Breadcrumb>
   );
-  const descriptionBreadcrumb = (
+  const characterBreadcrumb = (
     <Breadcrumb className="breadcrumbMenu">
       <Breadcrumb.Section
         as={Link}
@@ -132,10 +132,10 @@ const BreadcrumbMenu = ({ activeItem, setActiveItem }) => {
 
       <Breadcrumb.Section
         as={Link}
-        to="/description"
-        onClick={() => setActiveItem("description")}
+        to="/character"
+        onClick={() => setActiveItem("character")}
       >
-        Description
+        Character
       </Breadcrumb.Section>
     </Breadcrumb>
   );
@@ -157,8 +157,8 @@ const BreadcrumbMenu = ({ activeItem, setActiveItem }) => {
           {matches.small && activeItem === "ability" && (
             <>{abilityBreadcrumb}</>
           )}
-          {matches.small && activeItem === "description" && (
-            <>{descriptionBreadcrumb}</>
+          {matches.small && activeItem === "character" && (
+            <>{characterBreadcrumb}</>
           )}
         </div>
       )}
