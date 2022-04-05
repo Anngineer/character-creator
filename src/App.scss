@@ -37,6 +37,11 @@ body {
   display: flex;
   flex-direction: column;
 }
+.disabled-menu-link {
+  // color: #b7bfc4 !important;
+  color: rgba(255, 255, 255, 0.7) !important;
+  // color: rgba(0,0,0,.87)
+}
 
 @media (min-width: 500px) {
   .main-section {
@@ -86,19 +91,55 @@ i.right.arrow.icon.divider {
 .accordian .title {
   text-align: left;
 }
+.race-stats,
+.race-qualities,
+.class-stats,
+.class-qualities {
+  text-align: left;
+  padding: 1.5rem;
+}
 
+// I don't like to use !important, but the framework was being tricky.
 // .ui.styled.accordion,
-// .ui.styled.accordion .accordion {
-//   background: none !important;
+// .ui.styled.accordion .accordion,
+// .ui.styled.accordion div.title {
+//   // background: #0d0e24 !important;
+//   background: #04061d !important;
+
+//   color: #bfc0db !important;
+//   color: #d3d3d4 !important;
+//   border-top: 1px solid rgba(234, 238, 242, 0.15);
+//   &:hover {
+//     // background: #0d0e24 !important;
+//     // background: #0d0e24 !important;
+//     background: #04061d !important;
+//     color: #e9e9f1 !important;
+//     color: #e9e9f1 !important;
+//     color: white !important;
+
+//     // color: #a5a6be !important;
+//   }
 // }
+// Light style
+.ui.styled.accordion,
+.ui.styled.accordion .accordion,
+.ui.styled.accordion div.title {
+  background: #f4f4f6 !important;
+}
+
 .ui.accordion .accordion .title,
 .ui.accordion .title {
   text-align: left;
 }
 
-.ClassAccordian {
+.ClassAccordian,
+.blurb {
   text-align: left;
   color: black;
+}
+.blurb {
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
 }
 
 @media (max-width: 900px) {

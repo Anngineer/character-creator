@@ -7,7 +7,7 @@ import Level4RaceAccordion from "./RaceAccordian/Level4RaceAccordian";
 
 const RaceAccordianComponents = () => {
   const [activeIndex, setActiveIndex] = useState(0);
-  const [activeSubIndex, setActiveSubIndex] = useState(null);
+  const [activeSubIndex, setActiveSubIndex] = useState(-1);
 
   return (
     <div style={{ color: "#080a21", textAlign: "left" }}>

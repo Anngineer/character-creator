@@ -19,18 +19,17 @@ function SideMenu(props) {
         value="race"
         name="race"
         active={activeItem === "race"}
-        onClick={(e) => handleMenuClick(e, "race")}
-        as={Link}
-        to="/race"
-        disabled
+        // onClick={(e) => handleMenuClick(e, "race")}
+        // as={Link}
+        // to="/race"
       />
       <Menu.Item
         value="classes"
         name="classes"
         active={activeItem === "classes"}
-        onClick={(e) => handleMenuClick(e, "classes")}
-        as={Link}
-        to="/classes"
+        // onClick={(e) => handleMenuClick(e, "classes")}
+        // as={Link}
+        // to="/classes"
       />
       <Menu.Item
         value="ability"

@@ -11,6 +11,7 @@ const ClassAccordianComponents = () => {
 
   return (
     <div style={{ color: "#080a21", textAlign: "left" }}>
+      {/* <Accordion styled fluid inverted> */}
       <Accordion styled fluid>
         {/* First Group of Accordian */}
         <Level1ClassAccordion

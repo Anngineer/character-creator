@@ -45,6 +45,10 @@ body {
           flex-direction: column;
 }
 
+.disabled-menu-link {
+  color: rgba(255, 255, 255, 0.7) !important;
+}
+
 @media (min-width: 500px) {
   .main-section {
     -webkit-box-orient: horizontal;
@@ -100,14 +104,34 @@ i.right.arrow.icon.divider {
   text-align: left;
 }
 
+.race-stats,
+.race-qualities,
+.class-stats,
+.class-qualities {
+  text-align: left;
+  padding: 1.5rem;
+}
+
+.ui.styled.accordion,
+.ui.styled.accordion .accordion,
+.ui.styled.accordion div.title {
+  background: #f4f4f6 !important;
+}
+
 .ui.accordion .accordion .title,
 .ui.accordion .title {
   text-align: left;
 }
 
-.ClassAccordian {
+.ClassAccordian,
+.blurb {
   text-align: left;
   color: black;
+}
+
+.blurb {
+  padding-left: 1.6rem;
+  padding-right: 1.6rem;
 }
 
 @media (max-width: 900px) {

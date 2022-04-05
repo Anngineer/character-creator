@@ -1,4 +1,5 @@
 import { Accordion, Icon } from "semantic-ui-react";
+import useGet from "../useGet";
 
 const Level3RaceAccordian = ({
   activeIndex,
@@ -6,6 +7,17 @@ const Level3RaceAccordian = ({
   activeSubIndex,
   setActiveSubIndex,
 }) => {
+  const race3Blurb =
+    "With the strength and bravery of orcs and the cleverness of humanity, half-orcs feel their emotions intensly and often overwhelmingly.";
+  const {
+    data: raceData,
+    error,
+    isPending,
+  } = useGet("https://www.dnd5eapi.co/api/races/half-orc");
+  const loadingStatement = "Information on Half-Orc is loading...";
+  const errorStatement =
+    "There was a problem loading information on Half-Orcs.";
+
   return (
     <>
       <Accordion.Title
@@ -17,8 +29,11 @@ const Level3RaceAccordian = ({
         Half-Orc
       </Accordion.Title>
       <Accordion.Content active={activeIndex === 3}>
-        <p>
-          Third Group Main Content.
+        <div>
+          {/* Third Group Main Content. */}
+          {raceData && race3Blurb}
+          {isPending && loadingStatement}
+          {error && errorStatement}
           <Accordion.Accordion>
             {/*Sub Accordian */}
             {/* Level 3-A of Sub Accordian, Index 5 */}
@@ -31,7 +46,32 @@ const Level3RaceAccordian = ({
               Half-Orc Stats
             </Accordion.Title>
             <Accordion.Content active={activeSubIndex === 5}>
-              <p>Content 3.A</p>
+              {/* <p>Content 3.A</p> */}
+              {isPending && <p>{loadingStatement}</p>}
+              {error && <p>{errorStatement}</p>}
+              {raceData && (
+                <div className="race-stats">
+                  <p>
+                    <b>{raceData.name} speed</b> is {raceData.speed} feet per
+                    turn.
+                  </p>
+                  <p>
+                    The <b>Ability Bonuses</b> are: &nbsp;
+                    {raceData.ability_bonuses
+                      .map(
+                        (ability) =>
+                          `${ability.ability_score.name} + ${ability.bonus}`
+                      )
+                      .join(", ")}
+                  </p>
+                  <p>
+                    <b>Age</b>: {raceData.age}
+                  </p>
+                  <p>
+                    <b>Size</b>: {raceData.size_description}
+                  </p>
+                </div>
+              )}
             </Accordion.Content>
             {/* Level 3-B of Sub Accordian, Index 6 */}
             <Accordion.Title
@@ -43,11 +83,27 @@ const Level3RaceAccordian = ({
               Half-Orc Qualities
             </Accordion.Title>
             <Accordion.Content active={activeSubIndex === 6}>
-              <p>Content 3.B</p>
+              {/* <p>Content 3.B</p> */}
+              {isPending && <p>{loadingStatement}</p>}
+              {error && <p>{errorStatement}</p>}
+              {raceData && (
+                <div className="race-qualities">
+                  <p>
+                    <b>Traits: </b>
+                    {raceData.traits.map((trait) => trait.name).join(", ")}
+                  </p>
+                  <p>
+                    <b>Alignment</b>: {raceData.alignment}
+                  </p>
+                  <p>
+                    <b>Language</b>: {raceData.language_desc}
+                  </p>
+                </div>
+              )}
             </Accordion.Content>
             {/*  */}
           </Accordion.Accordion>
-        </p>
+        </div>
       </Accordion.Content>
     </>
   );
