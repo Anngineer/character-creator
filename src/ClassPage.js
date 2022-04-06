@@ -77,6 +77,9 @@ const ClassPage = ({
                 setBuildTopic("ability");
                 // localStorage.setItem("inBuild", "true");
                 localStorage.setItem("buildTopic", "ability");
+                console.log(
+                  "changed active item, buildtopic, and local storage was set buildTopic:ability"
+                );
               }}
               as={Link}
               to="/ability"

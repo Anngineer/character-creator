@@ -14,7 +14,10 @@ const RollScripts = ({
   setRolls,
   click,
   setClick,
+  doneRolling,
+  setDoneRolling,
   setActiveItem,
+  setBuildTopic,
   setSTR,
   setDEX,
   setCON,
@@ -27,7 +30,7 @@ const RollScripts = ({
   // const toggleVisibility = () => {
   //   setVisible(!visible);
   // };
-  const [doneRolling, setDoneRolling] = useState(false);
+  // const [doneRolling, setDoneRolling] = useState(false);
   const [diceA, setDiceA] = useState(null);
   const [diceB, setDiceB] = useState(null);
   const [diceC, setDiceC] = useState(null);
@@ -218,11 +221,15 @@ const RollScripts = ({
         <Button
           color="orange"
           style={{ color: "#080a21" }}
-          onClick={() => setActiveItem("character")}
+          onClick={() => {
+            setActiveItem("character");
+            setBuildTopic("character");
+            localStorage.setItem("buildTopic", "character");
+          }}
           as={Link}
           to="/character"
         >
-          You did it!
+          Click to Finish!
         </Button>
       )}
     </div>

@@ -24,6 +24,7 @@ const AbilityPage = ({
   const [raceData, setRaceData] = useState(null);
   const [rolls, setRolls] = useState([null, null, null, null, null, null]);
   const [click, setClick] = useState(0);
+  const [doneRolling, setDoneRolling] = useState(false);
   function handleButtonClick(race) {
     // setDnDClass("cleric");
     setRace(race);
@@ -84,7 +85,10 @@ const AbilityPage = ({
             setRolls={setRolls}
             click={click}
             setClick={setClick}
+            doneRolling={doneRolling}
+            setDoneRolling={setDoneRolling}
             setActiveItem={setActiveItem}
+            setBuildTopic={setBuildTopic}
             setSTR={setSTR}
             setDEX={setDEX}
             setCON={setCON}
