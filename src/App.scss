@@ -93,7 +93,7 @@ i.right.arrow.icon.divider {
 .button-wrapper {
   display: flex;
   flex-direction: row;
-  width: 70%;
+  width: 90%;
   flex-wrap: wrap;
   justify-content: space-around;
   margin-left: auto;
@@ -144,14 +144,18 @@ button,
 .ui.styled.accordion,
 .ui.styled.accordion .accordion,
 .ui.styled.accordion div.title {
-  background: #f4f4f6 !important;
+  // background: #f4f4f6 !important;
+  border-radius: 0.28571429rem;
 }
 
 .ui.accordion .accordion .title,
+.ui.styled.accordion .content,
 .ui.accordion .title {
   text-align: left;
 }
-
+.ui.styled.accordion .content {
+  padding-left: 1.4rem;
+}
 .ClassAccordian,
 .blurb {
   text-align: left;

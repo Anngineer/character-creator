@@ -28,36 +28,63 @@ const RacePage = ({
   } = useGet("https://www.dnd5eapi.co/api/races");
   return (
     <div className="race-page">
-      <BreadcrumbMenu activeItem={activeItem} setActiveItem={setActiveItem} />
+      {(activeItem !== "race" || !activeItem) && (
+        <div style={{ width: "70%" }}>
+          <p style={{ fontSize: "1.2rem" }}>
+            {" "}
+            Whoops! It looks like you're on the wrong step.
+            <br /> Let's jump back home and navigate from there.
+          </p>
 
-      <h1>Races</h1>
-      <p>Have you wanted to be elegant as an elf or strong as an orc?</p>
-      <p>
-        Explore four of the races. At the bottom of the page, choose which you'd
-        like to be.
-      </p>
-      <RaceAccordianComponents />
-      {isPending && (
-        <Button
-          // onClick={() => setActiveItem("ability")}
-
-          // to="/ability"
-          color="orange"
-          style={{ color: "#080a21" }}
-        >
-          Data is loading...
-        </Button>
+          <Button as={Link} to="/" color="orange" style={{ color: "#080a21" }}>
+            Return Home
+          </Button>
+        </div>
       )}
-      {raceData && (
-        <Button
-          onClick={() => setActiveItem("classes")}
-          as={Link}
-          to="/classes"
-          color="orange"
-          style={{ color: "#080a21" }}
-        >
-          Temporary Button
-        </Button>
+      {activeItem === "race" && (
+        <div>
+          <BreadcrumbMenu
+            activeItem={activeItem}
+            setActiveItem={setActiveItem}
+          />
+
+          <h1>Races</h1>
+          <p>Have you wanted to be elegant as an elf or strong as an orc?</p>
+          <p>
+            Explore four of the races. At the bottom of the page, choose which
+            you'd like to be.
+          </p>
+          <RaceAccordianComponents />
+          {isPending && (
+            <Button
+              // onClick={() => setActiveItem("ability")}
+
+              // to="/ability"
+              color="orange"
+              style={{ color: "#080a21" }}
+            >
+              Data is loading...
+            </Button>
+          )}
+          {raceData && (
+            <Button
+              // onClick={() => setActiveItem("classes")}
+              onClick={() => {
+                setActiveItem("classes");
+                // setInBuild(true);
+                setBuildTopic("classes");
+                // localStorage.setItem("inBuild", "true");
+                localStorage.setItem("buildTopic", "classes");
+              }}
+              as={Link}
+              to="/classes"
+              color="orange"
+              style={{ color: "#080a21" }}
+            >
+              Choose Your Race
+            </Button>
+          )}
+        </div>
       )}
     </div>
   );

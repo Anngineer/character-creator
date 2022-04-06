@@ -27,40 +27,66 @@ const ClassPage = ({
   } = useGet("https://www.dnd5eapi.co/api/classes");
   return (
     <div className="classes-page">
-      <BreadcrumbMenu activeItem={activeItem} setActiveItem={setActiveItem} />
+      {(activeItem !== "classes" || !activeItem) && (
+        <div style={{ width: "70%" }}>
+          <p style={{ fontSize: "1.2rem" }}>
+            {" "}
+            Whoops! It looks like you're on the wrong step.
+            <br /> Let's jump back home and navigate from there.
+          </p>
 
-      <h1>Classes</h1>
-      <p>Time to choose your occupation.</p>
-      <p>
-        Devote yourself to being a healer or destroy to your enemies through
-        pure rage!
-      </p>
-      <p>
-        Here are four possible paths for your character. Pick one at the bottom
-        of the page.
-      </p>
-      <ClassAccordianComponents />
-      {isPending && (
-        <Button
-          // onClick={() => setActiveItem("ability")}
-
-          // to="/ability"
-          color="orange"
-          style={{ color: "#080a21" }}
-        >
-          Data is loading...
-        </Button>
+          <Button as={Link} to="/" color="orange" style={{ color: "#080a21" }}>
+            Return Home
+          </Button>
+        </div>
       )}
-      {classesData && (
-        <Button
-          onClick={() => setActiveItem("ability")}
-          as={Link}
-          to="/ability"
-          color="orange"
-          style={{ color: "#080a21" }}
-        >
-          Temporary Button
-        </Button>
+
+      {activeItem === "classes" && (
+        <div>
+          <BreadcrumbMenu
+            activeItem={activeItem}
+            setActiveItem={setActiveItem}
+          />
+
+          <h1>Classes</h1>
+          <p>Time to choose your occupation.</p>
+          <p>
+            Devote yourself to being a healer or destroy to your enemies through
+            pure rage!
+          </p>
+          <p>
+            Here are four possible paths for your character. Pick one at the
+            bottom of the page.
+          </p>
+          <ClassAccordianComponents />
+          {isPending && (
+            <Button
+              // onClick={() => setActiveItem("ability")}
+
+              // to="/ability"
+              color="orange"
+              style={{ color: "#080a21" }}
+            >
+              Data is loading...
+            </Button>
+          )}
+          {classesData && (
+            <Button
+              onClick={() => {
+                setActiveItem("ability");
+                setBuildTopic("ability");
+                // localStorage.setItem("inBuild", "true");
+                localStorage.setItem("buildTopic", "ability");
+              }}
+              as={Link}
+              to="/ability"
+              color="orange"
+              style={{ color: "#080a21" }}
+            >
+              Choose Your Class
+            </Button>
+          )}
+        </div>
       )}
     </div>
   );

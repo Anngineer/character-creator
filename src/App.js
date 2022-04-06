@@ -7,6 +7,7 @@ import Home from "./Home";
 import RacePage from "./RacePage";
 import ClassPage from "./ClassPage";
 import AbilityPage from "./AbilityPage";
+import CharacterPage from "./CharacterPage";
 
 function App() {
   const [activeItem, setActiveItem] = useState(null);
@@ -21,13 +22,42 @@ function App() {
   const [INT, setINT] = useState(null);
   const [WIS, setWIS] = useState(null);
   const [CHA, setCHA] = useState(null);
-  const [inBuild, setInBuild] = useState(null);
-  const [buildTopic, setBuildTopic] = useState(null);
+  const [inBuild, setInBuild] = useState(
+    () => {
+      // getting localState info
+      const localInBuild = localStorage.getItem("inBuild");
+      let response = null;
+      if (localInBuild) {
+        response = localInBuild;
+      }
+      return response;
+    }
+    // localStorage.getItem("inBuild") ? true : false
+    // null
+  );
+  const [buildTopic, setBuildTopic] = useState(() => {
+    // getting local state info
+    const localBuildTopic = localStorage.getItem("buildTopic");
+    let response = null;
+    if (localBuildTopic) {
+      response = localBuildTopic;
+    }
+
+    return response;
+  });
   return (
     <Router>
       <div className="App">
         <div className="main-section">
           <SideMenu handleMenuClick={handleMenuClick} activeItem={activeItem} />
+          <div>
+            {inBuild && <p>inBuild : "true"</p>}
+            {!inBuild && <p>inBuild isn't saved</p>}
+            {!buildTopic && <p>buildTopic isn't saved</p>}
+            {buildTopic && <p>buildTopic is {buildTopic}</p>}
+            {!activeItem && <p>activeItem isn't saved</p>}
+            {activeItem && <p>activeItem is {activeItem}</p>}
+          </div>
           <div className="content">
             <Switch />
             <Route exact path="/">
@@ -81,7 +111,15 @@ function App() {
               />
             </Route>
             <Route path="/character">
-              <div>Character Sheet</div>
+              {/* <div>Character Sheet</div> */}
+              <CharacterPage
+                activeItem={activeItem}
+                setActiveItem={setActiveItem}
+                inBuild={inBuild}
+                setInBuild={setInBuild}
+                buildTopic={buildTopic}
+                setBuildTopic={setBuildTopic}
+              />
             </Route>
           </div>
         </div>
