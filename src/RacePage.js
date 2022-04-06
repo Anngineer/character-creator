@@ -5,7 +5,16 @@ import BreadcrumbMenu from "./BreadcrumbMenu";
 import RaceAccordianComponents from "./RaceAccordianComponents";
 import useGet from "./useGet";
 
-const RacePage = ({ activeItem, setActiveItem }) => {
+const RacePage = ({
+  activeItem,
+  setActiveItem,
+  inBuild,
+  setInBuild,
+  buildTopic,
+  setBuildTopic,
+  race,
+  setRace,
+}) => {
   // useEffect(() => {
   //   if (activeItem !== "race") {
   //     setActiveItem("race");

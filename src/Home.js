@@ -3,7 +3,14 @@ import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import BreadcrumbMenu from "./BreadcrumbMenu";
 
-const Home = ({ activeItem, setActiveItem }) => {
+const Home = ({
+  activeItem,
+  setActiveItem,
+  inBuild,
+  setInBuild,
+  buildTopic,
+  setBuildTopic,
+}) => {
   useEffect(() => {
     if (activeItem !== "home") {
       setActiveItem("home");

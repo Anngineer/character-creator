@@ -4,7 +4,16 @@ import { Button } from "semantic-ui-react";
 import BreadcrumbMenu from "./BreadcrumbMenu";
 import ClassAccordianComponents from "./ClassAccordianComponents";
 import useGet from "./useGet";
-const ClassPage = ({ activeItem, setActiveItem }) => {
+const ClassPage = ({
+  activeItem,
+  setActiveItem,
+  inBuild,
+  setInBuild,
+  buildTopic,
+  setBuildTopic,
+  dndClass,
+  setdndClass,
+}) => {
   // useEffect(() => {
   //   if (activeItem !== "classes") {
   //     setActiveItem("classes");

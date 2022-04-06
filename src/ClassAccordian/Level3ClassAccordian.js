@@ -90,7 +90,7 @@ const Level3ClassAccordian = ({
               {/* <p>Content 3.B</p> */}
               {subclassError && <p> {errorStatement}</p>}
               {isSubclassPending && <p>{loadingStatement}</p>}
-              {subclassData && (
+              {subclassData && classData && (
                 <div className="class-qualities">
                   <p>
                     <b>

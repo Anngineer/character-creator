@@ -9,7 +9,19 @@ import { Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 // import { Button, Transition, Image } from "semantic-ui-react";
 
-const RollScripts = ({ rolls, setRolls, click, setClick, setActiveItem }) => {
+const RollScripts = ({
+  rolls,
+  setRolls,
+  click,
+  setClick,
+  setActiveItem,
+  setSTR,
+  setDEX,
+  setCON,
+  setINT,
+  setWIS,
+  setCHA,
+}) => {
   //   let i = 0;
   // const [visible, setVisible] = useState(true);
   // const toggleVisibility = () => {

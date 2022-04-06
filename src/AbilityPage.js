@@ -4,7 +4,20 @@ import Backend from "./Backend";
 import RollScripts from "./RollScripts";
 import BreadcrumbMenu from "./BreadcrumbMenu";
 
-const AbilityPage = ({ activeItem, setActiveItem }) => {
+const AbilityPage = ({
+  activeItem,
+  setActiveItem,
+  inBuild,
+  setInBuild,
+  buildTopic,
+  setBuildTopic,
+  setSTR,
+  setDEX,
+  setCON,
+  setINT,
+  setWIS,
+  setCHA,
+}) => {
   const [race, setRace] = useState(null);
   const [raceData, setRaceData] = useState(null);
   const [rolls, setRolls] = useState([null, null, null, null, null, null]);
@@ -49,6 +62,12 @@ const AbilityPage = ({ activeItem, setActiveItem }) => {
         click={click}
         setClick={setClick}
         setActiveItem={setActiveItem}
+        setSTR={setSTR}
+        setDEX={setDEX}
+        setCON={setCON}
+        setINT={setINT}
+        setWIS={setWIS}
+        setCHA={setCHA}
       />
       {race && <p>Character is a {race}.</p>}
       <AbilityTable race={race} raceData={raceData} rolls={rolls} />
