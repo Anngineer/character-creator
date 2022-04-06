@@ -10,6 +10,10 @@ const Home = ({
   setInBuild,
   buildTopic,
   setBuildTopic,
+  race,
+  setRace,
+  dndClass,
+  setdndClass,
 }) => {
   // useEffect(() => {
   //   if (activeItem !== "home") {
@@ -91,10 +95,15 @@ const Home = ({
               onClick={() => {
                 setInBuild(false);
                 setBuildTopic(false);
+                setActiveItem("home");
+                setRace(false);
+                setdndClass(false);
 
                 // Reset all of the other info
                 localStorage.removeItem("inBuild");
                 localStorage.removeItem("buildTopic");
+                localStorage.removeItem("dndClass");
+                localStorage.removeItem("race");
               }}
             >
               Switch out of build mode

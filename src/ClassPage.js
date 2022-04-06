@@ -1,9 +1,11 @@
 // import { useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "semantic-ui-react";
 import BreadcrumbMenu from "./BreadcrumbMenu";
 import ClassAccordianComponents from "./ClassAccordianComponents";
 import useGet from "./useGet";
+import DndClassRadio from "./DndClassRadio";
 const ClassPage = ({
   activeItem,
   setActiveItem,
@@ -14,12 +16,7 @@ const ClassPage = ({
   dndClass,
   setdndClass,
 }) => {
-  // useEffect(() => {
-  //   if (activeItem !== "classes") {
-  //     setActiveItem("classes");
-  //   }
-  // }, []);
-  // Instead of changing the active item, return something else that says go back to the first page and restart the process.
+  const [formValue, setFormValue] = useState(null);
   const {
     data: classesData,
     error,
@@ -59,10 +56,17 @@ const ClassPage = ({
             bottom of the page.
           </p>
           <ClassAccordianComponents />
+          <DndClassRadio
+            dndClass={dndClass}
+            setdndClass={setdndClass}
+            formValue={formValue}
+            setFormValue={setFormValue}
+          />
+
           {isPending && (
             <Button
               // onClick={() => setActiveItem("ability")}
-
+              basic
               // to="/ability"
               color="orange"
               style={{ color: "#080a21" }}
@@ -70,12 +74,18 @@ const ClassPage = ({
               Data is loading...
             </Button>
           )}
-          {classesData && (
+          {classesData && !formValue && (
+            <Button basic color="orange" style={{ color: "#080a21" }}>
+              Select one of the Classes
+            </Button>
+          )}
+          {classesData && formValue && (
             <Button
               onClick={() => {
                 setActiveItem("ability");
                 setBuildTopic("ability");
-                // localStorage.setItem("inBuild", "true");
+                setdndClass(formValue);
+                localStorage.setItem("dndClass", formValue);
                 localStorage.setItem("buildTopic", "ability");
                 console.log(
                   "changed active item, buildtopic, and local storage was set buildTopic:ability"
@@ -86,7 +96,7 @@ const ClassPage = ({
               color="orange"
               style={{ color: "#080a21" }}
             >
-              Choose Your Class
+              Become a {formValue}!
             </Button>
           )}
         </div>

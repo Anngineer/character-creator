@@ -59,6 +59,8 @@ function App() {
             {activeItem && <p>activeItem is {activeItem}</p>}
             {!race && <p>Race isn't saved</p>}
             {race && <p>Race is {race}</p>}
+            {!dndClass && <p>Class isn't saved</p>}
+            {dndClass && <p>Class is {dndClass}</p>}
           </div>
           <div className="content">
             <Switch />
@@ -70,6 +72,10 @@ function App() {
                 setInBuild={setInBuild}
                 buildTopic={buildTopic}
                 setBuildTopic={setBuildTopic}
+                setRace={setRace}
+                race={race}
+                dndClass={dndClass}
+                setdndClass={setdndClass}
               />
             </Route>
             <Route exact path="/race">
