@@ -1,8 +1,10 @@
 // import { useEffect } from "react";
+import { useState } from "react";
 import { Link } from "react-router-dom";
 import { Button } from "semantic-ui-react";
 import BreadcrumbMenu from "./BreadcrumbMenu";
 import RaceAccordianComponents from "./RaceAccordianComponents";
+import RaceRadio from "./RaceRadio";
 import useGet from "./useGet";
 
 const RacePage = ({
@@ -26,6 +28,7 @@ const RacePage = ({
     error,
     isPending,
   } = useGet("https://www.dnd5eapi.co/api/races");
+  const [formValue, setFormValue] = useState(null);
   return (
     <div className="race-page">
       {(activeItem !== "race" || !activeItem) && (
@@ -54,26 +57,40 @@ const RacePage = ({
             Explore four of the races. At the bottom of the page, choose which
             you'd like to be.
           </p>
+          <p>{formValue}</p>
           <RaceAccordianComponents />
+          <RaceRadio
+            race={race}
+            setRace={setRace}
+            formValue={formValue}
+            setFormValue={setFormValue}
+          />
+
           {isPending && (
             <Button
               // onClick={() => setActiveItem("ability")}
 
               // to="/ability"
               color="orange"
+              basic
               style={{ color: "#080a21" }}
             >
               Data is loading...
             </Button>
           )}
-          {raceData && (
+          {raceData && !formValue && (
+            <Button color="orange" style={{ color: "#080a21" }} basic>
+              Click One of The Races Above
+            </Button>
+          )}
+          {raceData && formValue && (
             <Button
               // onClick={() => setActiveItem("classes")}
               onClick={() => {
                 setActiveItem("classes");
-                // setInBuild(true);
+                setRace(formValue);
                 setBuildTopic("classes");
-                // localStorage.setItem("inBuild", "true");
+                localStorage.setItem("race", formValue);
                 localStorage.setItem("buildTopic", "classes");
               }}
               as={Link}
@@ -81,7 +98,7 @@ const RacePage = ({
               color="orange"
               style={{ color: "#080a21" }}
             >
-              Choose Your Race
+              I have chosen!
             </Button>
           )}
         </div>

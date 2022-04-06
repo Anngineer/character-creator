@@ -57,6 +57,8 @@ function App() {
             {buildTopic && <p>buildTopic is {buildTopic}</p>}
             {!activeItem && <p>activeItem isn't saved</p>}
             {activeItem && <p>activeItem is {activeItem}</p>}
+            {!race && <p>Race isn't saved</p>}
+            {race && <p>Race is {race}</p>}
           </div>
           <div className="content">
             <Switch />
