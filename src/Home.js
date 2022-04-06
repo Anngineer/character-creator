@@ -21,24 +21,26 @@ const Home = ({
       <BreadcrumbMenu activeItem={activeItem} setActiveItem={setActiveItem} />
 
       <h2>Welcome!</h2>
-      <p>Let's make a character.</p>
+      <p>Step into another world and adventure with friends.</p>
       <p>
-        About: This is a short role-playing game (rpg) that uses parts of
-        Dungeons and Dragons 5th Edition API.
+        Using D&#38;D's 5th Edition API, we'll build a character for a role
+        playing game (RPG).
       </p>
       {/* If no local storage exists, */}
-      <Button basic color="orange">
-        Intro Guide
-      </Button>
-      <Button
-        color="orange"
-        style={{ color: "#080a21" }}
-        as={Link}
-        to="/race"
-        onClick={() => setActiveItem("race")}
-      >
-        Make a Character
-      </Button>
+      <div className="button-wrapper">
+        <Button basic color="orange">
+          Intro Tutorial
+        </Button>
+        <Button
+          color="orange"
+          style={{ color: "#080a21" }}
+          as={Link}
+          to="/race"
+          onClick={() => setActiveItem("race")}
+        >
+          Make a Character
+        </Button>
+      </div>
       {/* If a local storage exists */}
       {/* Welcome back! It looks like you have a character in progress. 
       button - jump back into our character

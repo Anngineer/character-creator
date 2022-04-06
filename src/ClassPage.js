@@ -29,14 +29,15 @@ const ClassPage = ({
     <div className="classes-page">
       <BreadcrumbMenu activeItem={activeItem} setActiveItem={setActiveItem} />
 
-      <h1>Class</h1>
+      <h1>Classes</h1>
+      <p>Time to choose your occupation.</p>
       <p>
-        Step into another world and decide what kind of class you want to be
-        there.{" "}
+        Devote yourself to being a healer or destroy to your enemies through
+        pure rage!
       </p>
       <p>
-        Explore four of the classes. At the bottom of the page, choose which
-        you'd like to be.
+        Here are four possible paths for your character. Pick one at the bottom
+        of the page.
       </p>
       <ClassAccordianComponents />
       {isPending && (

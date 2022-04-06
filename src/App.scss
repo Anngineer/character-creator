@@ -89,6 +89,23 @@ i.right.arrow.icon.divider {
   width: 100%;
 }
 
+// Home
+.button-wrapper {
+  display: flex;
+  flex-direction: row;
+  width: 70%;
+  flex-wrap: wrap;
+  justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+}
+button,
+.button,
+.ui.button {
+  margin: 1rem;
+  margin-top: 2rem;
+}
+
 // Race Accordian
 .accordian,
 .accordian .title {

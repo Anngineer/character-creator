@@ -31,10 +31,7 @@ const RacePage = ({
       <BreadcrumbMenu activeItem={activeItem} setActiveItem={setActiveItem} />
 
       <h1>Races</h1>
-      <p>
-        Step into another world and decide what kind of race you want to be
-        there.{" "}
-      </p>
+      <p>Have you wanted to be elegant as an elf or strong as an orc?</p>
       <p>
         Explore four of the races. At the bottom of the page, choose which you'd
         like to be.

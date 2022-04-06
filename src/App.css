@@ -100,6 +100,30 @@ i.right.arrow.icon.divider {
   width: 100%;
 }
 
+.button-wrapper {
+  display: -webkit-box;
+  display: -ms-flexbox;
+  display: flex;
+  -webkit-box-orient: horizontal;
+  -webkit-box-direction: normal;
+      -ms-flex-direction: row;
+          flex-direction: row;
+  width: 70%;
+  -ms-flex-wrap: wrap;
+      flex-wrap: wrap;
+  -ms-flex-pack: distribute;
+      justify-content: space-around;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+button,
+.button,
+.ui.button {
+  margin: 1rem;
+  margin-top: 2rem;
+}
+
 .accordian,
 .accordian .title {
   text-align: left;
