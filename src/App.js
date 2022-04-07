@@ -14,7 +14,9 @@ function App() {
   function handleMenuClick(e, value) {
     setActiveItem(value);
   }
+
   const [race, setRace] = useState(null);
+  const [raceData, setRaceData] = useState(null);
   const [dndClass, setdndClass] = useState(null);
   const [STR, setSTR] = useState(null);
   const [DEX, setDEX] = useState(null);
@@ -23,28 +25,33 @@ function App() {
   const [WIS, setWIS] = useState(null);
   const [CHA, setCHA] = useState(null);
   const [inBuild, setInBuild] = useState(
-    () => {
-      // getting localState info
-      const localInBuild = localStorage.getItem("inBuild");
-      let response = null;
-      if (localInBuild) {
-        response = localInBuild;
-      }
-      return response;
-    }
+    null
+    // () => {
+    //   // getting localState info
+    //   const localInBuild = localStorage.getItem("inBuild");
+    //   let response = null;
+    //   if (localInBuild) {
+    //     response = localInBuild;
+    //   }
+    //   return response;
+    // }
     // localStorage.getItem("inBuild") ? true : false
     // null
   );
-  const [buildTopic, setBuildTopic] = useState(() => {
-    // getting local state info
-    const localBuildTopic = localStorage.getItem("buildTopic");
-    let response = null;
-    if (localBuildTopic) {
-      response = localBuildTopic;
-    }
+  const [buildTopic, setBuildTopic] = useState(
+    null
+    // () => {
 
-    return response;
-  });
+    // getting local state info
+    //   const localBuildTopic = localStorage.getItem("buildTopic");
+    //   let response = null;
+    //   if (localBuildTopic) {
+    //     response = localBuildTopic;
+    //   }
+
+    //   return response;
+    // }
+  );
   return (
     <Router>
       <div className="App">
@@ -61,6 +68,7 @@ function App() {
             {race && <p>Race is {race}</p>}
             {!dndClass && <p>Class isn't saved</p>}
             {dndClass && <p>Class is {dndClass}</p>}
+            {raceData && <p>raceData is {raceData.raceName}</p>}
           </div>
           <div className="content">
             <Switch />
@@ -74,6 +82,7 @@ function App() {
                 setBuildTopic={setBuildTopic}
                 setRace={setRace}
                 race={race}
+                setRaceData={setRaceData}
                 dndClass={dndClass}
                 setdndClass={setdndClass}
               />
@@ -84,6 +93,8 @@ function App() {
                 setActiveItem={setActiveItem}
                 race={race}
                 setRace={setRace}
+                raceData={raceData}
+                setRaceData={setRaceData}
                 inBuild={inBuild}
                 setInBuild={setInBuild}
                 buildTopic={buildTopic}
@@ -104,6 +115,8 @@ function App() {
             </Route>
             <Route path="/ability">
               <AbilityPage
+                raceData={raceData}
+                race={race}
                 activeItem={activeItem}
                 setActiveItem={setActiveItem}
                 setSTR={setSTR}

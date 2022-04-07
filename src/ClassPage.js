@@ -85,8 +85,8 @@ const ClassPage = ({
                 setActiveItem("ability");
                 setBuildTopic("ability");
                 setdndClass(formValue);
-                localStorage.setItem("dndClass", formValue);
-                localStorage.setItem("buildTopic", "ability");
+                // localStorage.setItem("dndClass", formValue);
+                // localStorage.setItem("buildTopic", "ability");
                 console.log(
                   "changed active item, buildtopic, and local storage was set buildTopic:ability"
                 );

@@ -7,6 +7,9 @@ import { Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
 const AbilityPage = ({
+  race,
+  raceData,
+  setRaceData,
   activeItem,
   setActiveItem,
   inBuild,
@@ -20,28 +23,11 @@ const AbilityPage = ({
   setWIS,
   setCHA,
 }) => {
-  const [race, setRace] = useState(null);
-  const [raceData, setRaceData] = useState(null);
+  // const [race, setRace] = useState(null);
+  // const [raceData, setRaceData] = useState(null);
   const [rolls, setRolls] = useState([null, null, null, null, null, null]);
   const [click, setClick] = useState(0);
   const [doneRolling, setDoneRolling] = useState(false);
-  function handleButtonClick(race) {
-    // setDnDClass("cleric");
-    setRace(race);
-
-    handleRaceData(race);
-  }
-  function handleRaceData(race) {
-    if (race === "human") {
-      setRaceData(Backend.humanRace);
-    } else if (race === "half-orc") {
-      setRaceData(Backend.halforcRace);
-    } else if (race === "gnome") {
-      setRaceData(Backend.gnomeRace);
-    } else if (race === "elf") {
-      setRaceData(Backend.elfRace);
-    }
-  }
 
   return (
     <div className="AbilityPage">
@@ -66,20 +52,12 @@ const AbilityPage = ({
             setActiveItem={setActiveItem}
           />
 
-          <h1>Ability Stats</h1>
-          <button onClick={() => handleButtonClick("human")}>
-            Set Race as human
-          </button>
-          <button onClick={() => handleButtonClick("half-orc")}>
-            Set Race as half-orc
-          </button>
-          <button onClick={() => handleButtonClick("gnome")}>
-            Set Race as gnome
-          </button>
-          <button onClick={() => handleButtonClick("elf")}>
-            Set Race as elf
-          </button>
-
+          {doneRolling && (
+            <p>
+              Fate has determined your abilities! Let's see your whole character
+              by clicking below.
+            </p>
+          )}
           <RollScripts
             rolls={rolls}
             setRolls={setRolls}
@@ -96,8 +74,13 @@ const AbilityPage = ({
             setWIS={setWIS}
             setCHA={setCHA}
           />
-          {race && <p>Character is a {race}.</p>}
-          <AbilityTable race={race} raceData={raceData} rolls={rolls} />
+
+          <AbilityTable
+            race={race}
+            raceData={raceData}
+            setRaceData={setRaceData}
+            rolls={rolls}
+          />
         </div>
       )}
     </div>

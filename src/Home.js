@@ -2,6 +2,7 @@ import { Button } from "semantic-ui-react";
 import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import BreadcrumbMenu from "./BreadcrumbMenu";
+import { unstable_batchUpdates } from "react-dom";
 
 const Home = ({
   activeItem,
@@ -12,14 +13,19 @@ const Home = ({
   setBuildTopic,
   race,
   setRace,
+  setRaceData,
   dndClass,
   setdndClass,
 }) => {
-  // useEffect(() => {
-  //   if (activeItem !== "home") {
-  //     setActiveItem("home");
-  //   }
-  // }, []);
+  const resetCharacterBuilder = () => {
+    setRace(false);
+    setRaceData(false);
+    setdndClass(false);
+    setInBuild(false);
+    setBuildTopic(false);
+    setActiveItem("home");
+  };
+
   return (
     <div className="home">
       <BreadcrumbMenu activeItem={activeItem} setActiveItem={setActiveItem} />
@@ -30,7 +36,7 @@ const Home = ({
         Using D&#38;D's 5th Edition API, we'll build a character for a role
         playing game (RPG).
       </p>
-      {/* If no local storage exists, */}
+      {/* If you aren't in a build, */}
       {!inBuild && (
         <div className="button-wrapper">
           <Button basic color="orange">
@@ -45,8 +51,8 @@ const Home = ({
               setActiveItem("race");
               setInBuild(true);
               setBuildTopic("race");
-              localStorage.setItem("inBuild", "true");
-              localStorage.setItem("buildTopic", "race");
+              // localStorage.setItem("inBuild", "true");
+              // localStorage.setItem("buildTopic", "race");
             }}
           >
             Make a Character
@@ -71,7 +77,7 @@ const Home = ({
                 setActiveItem("race");
                 // setInBuild(false);
                 setBuildTopic("race");
-                localStorage.setItem("buildTopic", "race");
+                // localStorage.setItem("buildTopic", "race");
               }}
             >
               Continue Character
@@ -86,24 +92,19 @@ const Home = ({
                 setInBuild(true);
                 setBuildTopic("race");
                 // Reset all of the other info
-                localStorage.setItem("buildTopic", "race");
+                // localStorage.setItem("buildTopic", "race");
               }}
             >
               Make a New Character
             </Button>
             <Button
               onClick={() => {
-                setInBuild(false);
-                setBuildTopic(false);
-                setActiveItem("home");
-                setRace(false);
-                setdndClass(false);
-
-                // Reset all of the other info
-                localStorage.removeItem("inBuild");
-                localStorage.removeItem("buildTopic");
-                localStorage.removeItem("dndClass");
-                localStorage.removeItem("race");
+                resetCharacterBuilder();
+                // localStorage.removeItem("inBuild");
+                // localStorage.removeItem("buildTopic");
+                // localStorage.removeItem("dndClass");
+                // localStorage.removeItem("race");
+                console.log("the states should reset");
               }}
             >
               Switch out of build mode
@@ -142,7 +143,7 @@ const Home = ({
                 setInBuild(true);
                 setBuildTopic("race");
                 // Reset all of the other info
-                localStorage.setItem("buildTopic", "race");
+                // localStorage.setItem("buildTopic", "race");
               }}
             >
               Make a New Character
@@ -152,8 +153,8 @@ const Home = ({
                 setInBuild(false);
                 setBuildTopic(false);
 
-                localStorage.removeItem("inBuild");
-                localStorage.removeItem("buildTopic");
+                // localStorage.removeItem("inBuild");
+                // localStorage.removeItem("buildTopic");
 
                 // Reset all of the other info
               }}
@@ -193,7 +194,7 @@ const Home = ({
                 setActiveItem("race");
                 setInBuild(true);
                 setBuildTopic("race");
-                localStorage.setItem("buildTopic", "race");
+                // localStorage.setItem("buildTopic", "race");
 
                 // Reset all of the other info
               }}
@@ -206,8 +207,8 @@ const Home = ({
                 setBuildTopic(false);
 
                 // Reset all of the other info
-                localStorage.removeItem("inBuild");
-                localStorage.removeItem("buildTopic");
+                // localStorage.removeItem("inBuild");
+                // localStorage.removeItem("buildTopic");
               }}
             >
               Switch out of build mode
@@ -246,7 +247,7 @@ const Home = ({
                 setInBuild(true);
                 setBuildTopic("race");
                 // Reset all of the other info
-                localStorage.setItem("buildTopic", "race");
+                // localStorage.setItem("buildTopic", "race");
               }}
             >
               Make a New Character
@@ -256,8 +257,8 @@ const Home = ({
                 setInBuild(false);
                 setBuildTopic(false);
                 // Reset all of the other info
-                localStorage.removeItem("inBuild");
-                localStorage.removeItem("buildTopic");
+                // localStorage.removeItem("inBuild");
+                // localStorage.removeItem("buildTopic");
               }}
             >
               Switch out of build mode
@@ -297,8 +298,8 @@ const Home = ({
                   setInBuild(false);
                   setBuildTopic(false);
                   // Reset all of the other info
-                  localStorage.removeItem("inBuild");
-                  localStorage.removeItem("buildTopic");
+                  // localStorage.removeItem("inBuild");
+                  // localStorage.removeItem("buildTopic");
                 }}
               >
                 Switch out of build mode

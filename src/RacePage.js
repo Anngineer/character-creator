@@ -6,6 +6,7 @@ import BreadcrumbMenu from "./BreadcrumbMenu";
 import RaceAccordianComponents from "./RaceAccordianComponents";
 import RaceRadio from "./RaceRadio";
 import useGet from "./useGet";
+import Backend from "./Backend";
 
 const RacePage = ({
   activeItem,
@@ -16,13 +17,8 @@ const RacePage = ({
   setBuildTopic,
   race,
   setRace,
+  setRaceData,
 }) => {
-  // useEffect(() => {
-  //   if (activeItem !== "race") {
-  //     setActiveItem("race");
-  //   }
-  // }, []);
-  // Instead of changing the active Item, if it doesn't match up, have an error link that sends them back to the home page.
   const {
     data: raceData,
     error,
@@ -89,9 +85,20 @@ const RacePage = ({
               onClick={() => {
                 setActiveItem("classes");
                 setRace(formValue);
+                setRaceData(() => {
+                  if (formValue === "Elf") {
+                    return Backend.elfRace;
+                  } else if (formValue === "Human") {
+                    return Backend.humanRace;
+                  } else if (formValue === "Half-Orc") {
+                    return Backend.halforcRace;
+                  } else if (formValue === "Gnome") {
+                    return Backend.gnomeRace;
+                  }
+                });
                 setBuildTopic("classes");
-                localStorage.setItem("race", formValue);
-                localStorage.setItem("buildTopic", "classes");
+                // localStorage.setItem("race", formValue);
+                // localStorage.setItem("buildTopic", "classes");
               }}
               as={Link}
               to="/classes"

@@ -1,9 +1,9 @@
 import { Table } from "semantic-ui-react";
 import Media from "react-media";
-// import Backend from "./Backend";
+import Backend from "./Backend";
 
 // function AbilityTable() {
-const AbilityTable = ({ race, raceData, rolls }) => {
+const AbilityTable = ({ race, raceData, dndClass, setRaceData, rolls }) => {
   const largeTable = (
     <div>
       {raceData && (
