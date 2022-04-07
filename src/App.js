@@ -10,7 +10,7 @@ import AbilityPage from "./AbilityPage";
 import CharacterPage from "./CharacterPage";
 
 function App() {
-  const [activeItem, setActiveItem] = useState(null);
+  const [activeItem, setActiveItem] = useState("home");
   function handleMenuClick(e, value) {
     setActiveItem(value);
   }
@@ -34,7 +34,7 @@ function App() {
       <div className="App">
         <div className="main-section">
           <SideMenu handleMenuClick={handleMenuClick} activeItem={activeItem} />
-          <div>
+          {/* <div>
             {inBuild && <p>inBuild : "true"</p>}
             {!inBuild && <p>inBuild isn't saved</p>}
             {!buildTopic && <p>buildTopic isn't saved</p>}
@@ -46,7 +46,7 @@ function App() {
             {!dndClass && <p>Class isn't saved</p>}
             {dndClass && <p>Class is {dndClass}</p>}
             {raceData && <p>raceData is {raceData.raceName}</p>}
-          </div>
+          </div> */}
           <div className="content">
             <Switch />
             <Route exact path="/">

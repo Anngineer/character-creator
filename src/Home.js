@@ -1,8 +1,7 @@
 import { Button } from "semantic-ui-react";
-import { useEffect } from "react";
 import { Link } from "react-router-dom";
 import BreadcrumbMenu from "./BreadcrumbMenu";
-import { unstable_batchUpdates } from "react-dom";
+import wizard from "./images/wizard.png";
 
 const Home = ({
   activeItem,
@@ -30,11 +29,16 @@ const Home = ({
     <div className="home">
       <BreadcrumbMenu activeItem={activeItem} setActiveItem={setActiveItem} />
 
+      <img
+        src={wizard}
+        alt="wizard with a white beard and glowing staff"
+        style={{ width: "10rem" }}
+      />
       <h2>Welcome!</h2>
       <p>Step into another world and adventure with friends.</p>
       <p>
         Using D&#38;D's 5th Edition API, we'll build a character for a role
-        playing game (RPG).
+        playing game (RPG). Let's dive in!
       </p>
       {/* If you aren't in a build, */}
       {!inBuild && (
@@ -51,8 +55,6 @@ const Home = ({
               setActiveItem("race");
               setInBuild(true);
               setBuildTopic("race");
-              // localStorage.setItem("inBuild", "true");
-              // localStorage.setItem("buildTopic", "race");
             }}
           >
             Make a Character
@@ -75,9 +77,7 @@ const Home = ({
               to="/race" // Go to the location of the build
               onClick={() => {
                 setActiveItem("race");
-                // setInBuild(false);
                 setBuildTopic("race");
-                // localStorage.setItem("buildTopic", "race");
               }}
             >
               Continue Character
@@ -91,24 +91,18 @@ const Home = ({
                 setActiveItem("race");
                 setInBuild(true);
                 setBuildTopic("race");
-                // Reset all of the other info
-                // localStorage.setItem("buildTopic", "race");
               }}
             >
               Make a New Character
             </Button>
-            <Button
+            {/* <Button
               onClick={() => {
                 resetCharacterBuilder();
-                // localStorage.removeItem("inBuild");
-                // localStorage.removeItem("buildTopic");
-                // localStorage.removeItem("dndClass");
-                // localStorage.removeItem("race");
                 console.log("the states should reset");
               }}
             >
               Switch out of build mode
-            </Button>
+            </Button> */}
           </div>
         </>
       )}
@@ -142,25 +136,18 @@ const Home = ({
                 setActiveItem("race");
                 setInBuild(true);
                 setBuildTopic("race");
-                // Reset all of the other info
-                // localStorage.setItem("buildTopic", "race");
               }}
             >
               Make a New Character
             </Button>
-            <Button
+            {/* <Button
               onClick={() => {
                 setInBuild(false);
                 setBuildTopic(false);
-
-                // localStorage.removeItem("inBuild");
-                // localStorage.removeItem("buildTopic");
-
-                // Reset all of the other info
               }}
             >
               Switch out of build mode
-            </Button>
+            </Button> */}
           </div>
         </>
       )}
@@ -194,25 +181,20 @@ const Home = ({
                 setActiveItem("race");
                 setInBuild(true);
                 setBuildTopic("race");
-                // localStorage.setItem("buildTopic", "race");
-
                 // Reset all of the other info
               }}
             >
               Make a New Character
             </Button>
-            <Button
+            {/* <Button
               onClick={() => {
                 setInBuild(false);
                 setBuildTopic(false);
-
                 // Reset all of the other info
-                // localStorage.removeItem("inBuild");
-                // localStorage.removeItem("buildTopic");
               }}
             >
               Switch out of build mode
-            </Button>
+            </Button>*/}
           </div>
         </>
       )}
@@ -228,7 +210,7 @@ const Home = ({
               color="orange"
               style={{ color: "#080a21" }}
               as={Link}
-              to="/ability" // Go to the location of the build
+              to="/character" // Go to the location of the build
               onClick={() => {
                 setActiveItem("character");
                 setInBuild(true);
@@ -247,22 +229,19 @@ const Home = ({
                 setInBuild(true);
                 setBuildTopic("race");
                 // Reset all of the other info
-                // localStorage.setItem("buildTopic", "race");
               }}
             >
               Make a New Character
             </Button>
-            <Button
+            {/* <Button
               onClick={() => {
                 setInBuild(false);
                 setBuildTopic(false);
                 // Reset all of the other info
-                // localStorage.removeItem("inBuild");
-                // localStorage.removeItem("buildTopic");
               }}
             >
               Switch out of build mode
-            </Button>
+            </Button> */}
           </div>
         </>
       )}
@@ -293,25 +272,18 @@ const Home = ({
               >
                 Make a New Character
               </Button>
-              <Button
+              {/* <Button
                 onClick={() => {
                   setInBuild(false);
                   setBuildTopic(false);
                   // Reset all of the other info
-                  // localStorage.removeItem("inBuild");
-                  // localStorage.removeItem("buildTopic");
                 }}
               >
                 Switch out of build mode
-              </Button>
+              </Button> */}
             </div>
           </>
         )}
-      {/* If a local storage exists */}
-      {/* Welcome back! It looks like you have a character in progress. 
-      button - jump back into our character
-      button - start a new character */}
-      {/* If they choose to jump in, then determine what kind of local storage key(return to page: "race") is held and move to that location. */}
     </div>
   );
 };

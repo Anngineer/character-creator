@@ -50,7 +50,6 @@ const RacePage = ({
             Explore four of the races. At the bottom of the page, choose which
             you'd like to be.
           </p>
-          <p>{formValue}</p>
           <RaceAccordianComponents />
           <RaceRadio
             race={race}

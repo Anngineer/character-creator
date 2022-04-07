@@ -7,7 +7,7 @@ const Level3ClassAccordian = ({
   activeSubIndex,
   setActiveSubIndex,
 }) => {
-  const classBlurb = `A spiritual connection with nature drives and empowers druids, who use their mystical abilities to protect and commune with nature. .`;
+  const classBlurb = `A spiritual connection with nature drives and empowers druids, who use their mystical abilities to protect and commune with nature.`;
   const loadingStatement = "Information on the class Druid is loading...";
   const errorStatement =
     "There was a problem loading information on the class Druid.";

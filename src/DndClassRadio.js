@@ -36,7 +36,7 @@ const DndClassRadio = ({ dndClass, setdndClass, formValue, setFormValue }) => {
           onChange={() => handleChange("Rogue")}
         />{" "}
         Rogue
-        <button onClick={() => setFormValue(null)}>Nothing</button>
+        {/* <button onClick={() => setFormValue(null)}>Nothing</button> */}
       </Form>
     </div>
   );

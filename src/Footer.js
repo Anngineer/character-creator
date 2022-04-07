@@ -1,7 +1,19 @@
 const Footer = () => {
   return (
     <div className="footer-section">
-      <p>Webpage designed and developed by Ann Bridge.</p>
+      <p style={{ color: "rgba(255, 255, 255, 0.7)" }}>
+        Webpage designed and developed by{" "}
+        <a
+          href={"https://github.com/Anngineer"}
+          style={{
+            textDecoration: "underline",
+            color: "rgba(255, 255, 255, 0.7)",
+          }}
+        >
+          Anngineer
+        </a>
+        .
+      </p>
     </div>
   );
 };

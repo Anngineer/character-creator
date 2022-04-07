@@ -32,7 +32,7 @@ body {
   background-position: top -160px left;
   background-size: 1200px 1200px;
   background-repeat: no-repeat;
-  padding: 2rem;
+  padding: 1rem;
   position: relative;
   height: 200vh;
   min-height: 640px;
@@ -46,16 +46,13 @@ body {
           flex-direction: column;
 }
 
-.disabled-menu-link {
-  color: rgba(255, 255, 255, 0.7) !important;
-}
-
 @media (min-width: 500px) {
   .main-section {
     -webkit-box-orient: horizontal;
     -webkit-box-direction: normal;
         -ms-flex-direction: row;
             flex-direction: row;
+    padding: 2rem;
   }
 }
 
@@ -75,9 +72,7 @@ body {
 
 .breadcrumbMenu {
   color: #ebe2d5;
-  /* background-color: rgb(235, 226, 213); */
   width: 100%;
-  padding: 1rem;
   text-align: left;
 }
 
@@ -305,6 +300,17 @@ button,
     -webkit-transform: translate(1px, -2px) rotate(-6deg);
             transform: translate(1px, -2px) rotate(-6deg);
   }
+}
+
+.character-summary {
+  text-align: left;
+  border: #d6cec3 solid 1px;
+  border-radius: 4px;
+  padding: 1rem;
+}
+
+.character-summary h4 {
+  text-align: center;
 }
 
 .footer-section {

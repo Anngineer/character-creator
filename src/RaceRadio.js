@@ -43,7 +43,7 @@ const RaceRadio = ({ race, setRace, formValue, setFormValue }) => {
           onChange={() => handleChange("Gnome")}
         />{" "}
         Gnome
-        <button onClick={() => setFormValue(null)}>Nothing</button>
+        {/* <button onClick={() => setFormValue(null)}>Nothing</button> */}
       </Form>
     </div>
   );
