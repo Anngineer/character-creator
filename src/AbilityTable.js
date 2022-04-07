@@ -1,9 +1,33 @@
 import { Table } from "semantic-ui-react";
 import Media from "react-media";
 import Backend from "./Backend";
+import { Button } from "semantic-ui-react";
 
 // function AbilityTable() {
-const AbilityTable = ({ race, raceData, dndClass, setRaceData, rolls }) => {
+const AbilityTable = ({
+  race,
+  raceData,
+  doneRolling,
+  dndClass,
+  rolls,
+  setAbilities,
+}) => {
+  const handleAbilityStats = () => {
+    const STRNum = raceData.modSTR + rolls[0];
+    const DEXNum = raceData.modDEX + rolls[1];
+    const CONNum = raceData.modCON + rolls[2];
+    const INTNum = raceData.modINT + rolls[3];
+    const WISNum = raceData.modWIS + rolls[4];
+    const CHANum = raceData.modCHA + rolls[5];
+    setAbilities([
+      { STR: STRNum },
+      { DEX: DEXNum },
+      { CON: CONNum },
+      { INT: INTNum },
+      { WIS: WISNum },
+      { CHA: CHANum },
+    ]);
+  };
   const largeTable = (
     <div>
       {raceData && (
@@ -129,6 +153,11 @@ const AbilityTable = ({ race, raceData, dndClass, setRaceData, rolls }) => {
     <div>
       {/* <h4>Ability Table</h4> */}
       <div>
+        {doneRolling && (
+          <Button onClick={() => handleAbilityStats()}>
+            Set Ability State
+          </Button>
+        )}
         <Media
           queries={{
             small: "(max-width: 769px)",

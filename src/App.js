@@ -18,12 +18,20 @@ function App() {
   const [race, setRace] = useState(null);
   const [raceData, setRaceData] = useState(null);
   const [dndClass, setdndClass] = useState(null);
-  const [STR, setSTR] = useState(null);
-  const [DEX, setDEX] = useState(null);
-  const [CON, setCON] = useState(null);
-  const [INT, setINT] = useState(null);
-  const [WIS, setWIS] = useState(null);
-  const [CHA, setCHA] = useState(null);
+  const [abilities, setAbilities] = useState([
+    { STR: 0 },
+    { DEX: 0 },
+    { CON: 0 },
+    { INT: 0 },
+    { WIS: 0 },
+    { CHA: 0 },
+  ]);
+  // const [STR, setSTR] = useState(null);
+  // const [DEX, setDEX] = useState(null);
+  // const [CON, setCON] = useState(null);
+  // const [INT, setINT] = useState(null);
+  // const [WIS, setWIS] = useState(null);
+  // const [CHA, setCHA] = useState(null);
   const [inBuild, setInBuild] = useState(
     null
     // () => {
@@ -119,12 +127,14 @@ function App() {
                 race={race}
                 activeItem={activeItem}
                 setActiveItem={setActiveItem}
-                setSTR={setSTR}
-                setDEX={setDEX}
-                setCON={setCON}
-                setINT={setINT}
-                setWIS={setWIS}
-                setCHA={setCHA}
+                abilities={abilities}
+                setAbilities={setAbilities}
+                // setSTR={setSTR}
+                // setDEX={setDEX}
+                // setCON={setCON}
+                // setINT={setINT}
+                // setWIS={setWIS}
+                // setCHA={setCHA}
                 inBuild={inBuild}
                 setInBuild={setInBuild}
                 buildTopic={buildTopic}

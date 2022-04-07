@@ -16,12 +16,7 @@ const AbilityPage = ({
   setInBuild,
   buildTopic,
   setBuildTopic,
-  setSTR,
-  setDEX,
-  setCON,
-  setINT,
-  setWIS,
-  setCHA,
+  setAbilities,
 }) => {
   // const [race, setRace] = useState(null);
   // const [raceData, setRaceData] = useState(null);
@@ -70,19 +65,14 @@ const AbilityPage = ({
             setDoneRolling={setDoneRolling}
             setActiveItem={setActiveItem}
             setBuildTopic={setBuildTopic}
-            setSTR={setSTR}
-            setDEX={setDEX}
-            setCON={setCON}
-            setINT={setINT}
-            setWIS={setWIS}
-            setCHA={setCHA}
           />
 
           <AbilityTable
             race={race}
             raceData={raceData}
-            setRaceData={setRaceData}
+            doneRolling={doneRolling}
             rolls={rolls}
+            setAbilities={setAbilities}
           />
         </div>
       )}
