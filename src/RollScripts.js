@@ -18,19 +18,7 @@ const RollScripts = ({
   setDoneRolling,
   setActiveItem,
   setBuildTopic,
-  setSTR,
-  setDEX,
-  setCON,
-  setINT,
-  setWIS,
-  setCHA,
 }) => {
-  //   let i = 0;
-  // const [visible, setVisible] = useState(true);
-  // const toggleVisibility = () => {
-  //   setVisible(!visible);
-  // };
-  // const [doneRolling, setDoneRolling] = useState(false);
   const [diceA, setDiceA] = useState(null);
   const [diceB, setDiceB] = useState(null);
   const [diceC, setDiceC] = useState(null);
@@ -99,14 +87,8 @@ const RollScripts = ({
 
     console.log("finished!", click);
   }
-  // function roll(number) {
-  //   return Math.floor(Math.random() * number);
-  // }
   return (
     <div className="diceSection">
-      {/* <h2>Roll Scripts</h2> */}
-      {/* <Button onClick={() => toggleVisibility()}>Visibility</Button> */}
-
       {!doneRolling && (
         <Button
           basic
@@ -118,9 +100,7 @@ const RollScripts = ({
         </Button>
       )}
       {/* <h3>Dice Roll Pictures</h3> */}
-      {/* <h4>Roll</h4> */}
       <div className="diceImageDisplay">
-        {/* <Transition visible={visible} animation="shake" duration={500}> */}
         {/* DICE A */}
         {diceA && diceA === 1 && (
           <img src={dice1} alt="die " className="diceImage"></img>
@@ -217,7 +197,7 @@ const RollScripts = ({
           </p>
         </div>
       )}
-      {doneRolling && (
+      {/* {doneRolling && (
         <Button
           color="orange"
           style={{ color: "#080a21" }}
@@ -231,7 +211,7 @@ const RollScripts = ({
         >
           Click to Finish!
         </Button>
-      )}
+      )} */}
     </div>
   );
 };

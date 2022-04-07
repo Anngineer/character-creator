@@ -11,9 +11,6 @@ import Backend from "./Backend";
 const RacePage = ({
   activeItem,
   setActiveItem,
-  inBuild,
-  setInBuild,
-  buildTopic,
   setBuildTopic,
   race,
   setRace,
@@ -63,14 +60,7 @@ const RacePage = ({
           />
 
           {isPending && (
-            <Button
-              // onClick={() => setActiveItem("ability")}
-
-              // to="/ability"
-              color="orange"
-              basic
-              style={{ color: "#080a21" }}
-            >
+            <Button color="orange" basic style={{ color: "#080a21" }}>
               Data is loading...
             </Button>
           )}
@@ -81,7 +71,6 @@ const RacePage = ({
           )}
           {raceData && formValue && (
             <Button
-              // onClick={() => setActiveItem("classes")}
               onClick={() => {
                 setActiveItem("classes");
                 setRace(formValue);
@@ -97,8 +86,6 @@ const RacePage = ({
                   }
                 });
                 setBuildTopic("classes");
-                // localStorage.setItem("race", formValue);
-                // localStorage.setItem("buildTopic", "classes");
               }}
               as={Link}
               to="/classes"

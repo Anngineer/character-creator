@@ -1,6 +1,5 @@
 import AbilityTable from "./AbilityTable";
 import { useState } from "react";
-import Backend from "./Backend";
 import RollScripts from "./RollScripts";
 import BreadcrumbMenu from "./BreadcrumbMenu";
 import { Button } from "semantic-ui-react";
@@ -9,17 +8,11 @@ import { Link } from "react-router-dom";
 const AbilityPage = ({
   race,
   raceData,
-  setRaceData,
   activeItem,
   setActiveItem,
-  inBuild,
-  setInBuild,
-  buildTopic,
   setBuildTopic,
   setAbilities,
 }) => {
-  // const [race, setRace] = useState(null);
-  // const [raceData, setRaceData] = useState(null);
   const [rolls, setRolls] = useState([null, null, null, null, null, null]);
   const [click, setClick] = useState(0);
   const [doneRolling, setDoneRolling] = useState(false);
@@ -73,6 +66,8 @@ const AbilityPage = ({
             doneRolling={doneRolling}
             rolls={rolls}
             setAbilities={setAbilities}
+            setActiveItem={setActiveItem}
+            setBuildTopic={setBuildTopic}
           />
         </div>
       )}

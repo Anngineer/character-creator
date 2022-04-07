@@ -31,7 +31,6 @@ const DndClassRadio = ({ dndClass, setdndClass, formValue, setFormValue }) => {
         <Radio
           className="radio-input"
           style={{ color: "white" }}
-          //   label="Gnome"
           value="Rogue"
           checked={formValue === "Rogue"}
           onChange={() => handleChange("Rogue")}

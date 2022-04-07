@@ -9,9 +9,6 @@ import DndClassRadio from "./DndClassRadio";
 const ClassPage = ({
   activeItem,
   setActiveItem,
-  inBuild,
-  setInBuild,
-  buildTopic,
   setBuildTopic,
   dndClass,
   setdndClass,
@@ -64,13 +61,7 @@ const ClassPage = ({
           />
 
           {isPending && (
-            <Button
-              // onClick={() => setActiveItem("ability")}
-              basic
-              // to="/ability"
-              color="orange"
-              style={{ color: "#080a21" }}
-            >
+            <Button basic color="orange" style={{ color: "#080a21" }}>
               Data is loading...
             </Button>
           )}
@@ -85,8 +76,6 @@ const ClassPage = ({
                 setActiveItem("ability");
                 setBuildTopic("ability");
                 setdndClass(formValue);
-                // localStorage.setItem("dndClass", formValue);
-                // localStorage.setItem("buildTopic", "ability");
                 console.log(
                   "changed active item, buildtopic, and local storage was set buildTopic:ability"
                 );

@@ -1,16 +1,15 @@
 import { Table } from "semantic-ui-react";
 import Media from "react-media";
-import Backend from "./Backend";
 import { Button } from "semantic-ui-react";
+import { Link } from "react-router-dom";
 
-// function AbilityTable() {
 const AbilityTable = ({
-  race,
   raceData,
   doneRolling,
-  dndClass,
   rolls,
   setAbilities,
+  setActiveItem,
+  setBuildTopic,
 }) => {
   const handleAbilityStats = () => {
     const STRNum = raceData.modSTR + rolls[0];
@@ -27,6 +26,8 @@ const AbilityTable = ({
       { WIS: WISNum },
       { CHA: CHANum },
     ]);
+    setActiveItem("character");
+    setBuildTopic("character");
   };
   const largeTable = (
     <div>
@@ -154,8 +155,14 @@ const AbilityTable = ({
       {/* <h4>Ability Table</h4> */}
       <div>
         {doneRolling && (
-          <Button onClick={() => handleAbilityStats()}>
-            Set Ability State
+          <Button
+            as={Link}
+            to="/character"
+            color="orange"
+            style={{ color: "#080a21" }}
+            onClick={() => handleAbilityStats()}
+          >
+            Click to Finish!
           </Button>
         )}
         <Media

@@ -26,40 +26,9 @@ function App() {
     { WIS: 0 },
     { CHA: 0 },
   ]);
-  // const [STR, setSTR] = useState(null);
-  // const [DEX, setDEX] = useState(null);
-  // const [CON, setCON] = useState(null);
-  // const [INT, setINT] = useState(null);
-  // const [WIS, setWIS] = useState(null);
-  // const [CHA, setCHA] = useState(null);
-  const [inBuild, setInBuild] = useState(
-    null
-    // () => {
-    //   // getting localState info
-    //   const localInBuild = localStorage.getItem("inBuild");
-    //   let response = null;
-    //   if (localInBuild) {
-    //     response = localInBuild;
-    //   }
-    //   return response;
-    // }
-    // localStorage.getItem("inBuild") ? true : false
-    // null
-  );
-  const [buildTopic, setBuildTopic] = useState(
-    null
-    // () => {
 
-    // getting local state info
-    //   const localBuildTopic = localStorage.getItem("buildTopic");
-    //   let response = null;
-    //   if (localBuildTopic) {
-    //     response = localBuildTopic;
-    //   }
-
-    //   return response;
-    // }
-  );
+  const [inBuild, setInBuild] = useState(null);
+  const [buildTopic, setBuildTopic] = useState(null);
   return (
     <Router>
       <div className="App">
@@ -103,9 +72,6 @@ function App() {
                 setRace={setRace}
                 raceData={raceData}
                 setRaceData={setRaceData}
-                inBuild={inBuild}
-                setInBuild={setInBuild}
-                buildTopic={buildTopic}
                 setBuildTopic={setBuildTopic}
               />
             </Route>
@@ -115,9 +81,6 @@ function App() {
                 setActiveItem={setActiveItem}
                 dndClass={dndClass}
                 setdndClass={setdndClass}
-                inBuild={inBuild}
-                setInBuild={setInBuild}
-                buildTopic={buildTopic}
                 setBuildTopic={setBuildTopic}
               />
             </Route>
@@ -129,29 +92,16 @@ function App() {
                 setActiveItem={setActiveItem}
                 abilities={abilities}
                 setAbilities={setAbilities}
-                // setSTR={setSTR}
-                // setDEX={setDEX}
-                // setCON={setCON}
-                // setINT={setINT}
-                // setWIS={setWIS}
-                // setCHA={setCHA}
-                inBuild={inBuild}
-                setInBuild={setInBuild}
-                buildTopic={buildTopic}
                 setBuildTopic={setBuildTopic}
               />
             </Route>
             <Route path="/character">
-              {/* <div>Character Sheet</div> */}
               <CharacterPage
                 race={race}
                 dndClass={dndClass}
+                abilities={abilities}
                 activeItem={activeItem}
-                //
                 setActiveItem={setActiveItem}
-                inBuild={inBuild}
-                setInBuild={setInBuild}
-                buildTopic={buildTopic}
                 setBuildTopic={setBuildTopic}
               />
             </Route>
