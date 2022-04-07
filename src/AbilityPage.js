@@ -51,11 +51,14 @@ const AbilityPage = ({
             activeItem={activeItem}
             setActiveItem={setActiveItem}
           />
-
+          <h2>Ability Stats</h2>
+          {!doneRolling && (
+            <p>Roll the die to let fate determine your abilities!</p>
+          )}
           {doneRolling && (
             <p>
-              Fate has determined your abilities! Let's see your whole character
-              by clicking below.
+              Fate has determined your abilities! <br /> Let's see your whole
+              character by clicking below.
             </p>
           )}
           <RollScripts

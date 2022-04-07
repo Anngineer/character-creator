@@ -134,7 +134,10 @@ function App() {
             <Route path="/character">
               {/* <div>Character Sheet</div> */}
               <CharacterPage
+                race={race}
+                dndClass={dndClass}
                 activeItem={activeItem}
+                //
                 setActiveItem={setActiveItem}
                 inBuild={inBuild}
                 setInBuild={setInBuild}

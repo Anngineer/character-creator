@@ -1,7 +1,7 @@
 import { Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 
-const CharacterPage = ({ race, activeItem }) => {
+const CharacterPage = ({ race, dndClass, activeItem }) => {
   return (
     <div className="CharacterPage">
       {(activeItem !== "character" || !activeItem) && (
@@ -20,7 +20,8 @@ const CharacterPage = ({ race, activeItem }) => {
       {activeItem === "character" && (
         <div>
           <h3>Character Sheet Info</h3>
-          {race && <div>The race is {race}</div>}
+          {race && <p>The race is {race}.</p>}
+          {dndClass && <p>The Class is {dndClass}.</p>}
         </div>
       )}
     </div>
