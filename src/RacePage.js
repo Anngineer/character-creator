@@ -45,11 +45,13 @@ const RacePage = ({
           />
 
           <h2>Races</h2>
-          <p>Have you wanted to be elegant as an elf or strong as an orc?</p>
-          <p>
-            Explore four of the races. At the bottom of the page, choose which
-            you'd like to be.
-          </p>
+          <div className="race-text">
+            <p>Have you wanted to be elegant as an elf or strong as an orc?</p>
+            <p>
+              Explore four of the races. At the bottom of the page, choose which
+              you'd like to be.
+            </p>
+          </div>
           <RaceAccordianComponents />
           <RaceRadio
             race={race}

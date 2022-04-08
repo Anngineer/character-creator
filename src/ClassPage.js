@@ -43,15 +43,14 @@ const ClassPage = ({
           />
 
           <h2>Classes</h2>
-          <p>Time to choose your occupation!</p>
-          <p>
-            Devote yourself to being a healer or destroy to your enemies through
-            pure rage.
-          </p>
-          <p>
-            Here are four possible paths for your character. Pick one at the
-            bottom of the page.
-          </p>
+          <div className="class-text">
+            <p>Time to choose your occupation!</p>
+            <p>
+              Devote yourself to being a healer or destroy to your enemies
+              through pure rage. Here are four possible paths for your
+              character. Pick one at the bottom.
+            </p>
+          </div>
           <ClassAccordianComponents />
           <DndClassRadio
             dndClass={dndClass}

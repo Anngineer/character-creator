@@ -115,6 +115,33 @@ button,
   margin: 1rem;
 }
 
+.race-text,
+.class-text {
+  max-width: 450px;
+  margin-left: auto;
+  margin-right: auto;
+}
+
+@media (min-width: 400px) and (max-width: 600px) {
+  .home-text {
+    padding-left: 2rem;
+    padding-right: 2rem;
+  }
+}
+
+@media (max-width: 600px) {
+  .home-text,
+  .race-text,
+  .class-text {
+    text-align: left;
+  }
+}
+
+.race-accordian,
+.class-accordian {
+  margin-top: 1rem;
+}
+
 @media (min-width: 900px) {
   .race-accordian,
   .class-accordian {
@@ -145,6 +172,8 @@ button,
 .race-radio .radio-option,
 .class-radio .radio-option {
   display: inline-block;
+  margin-top: 0.5rem;
+  margin-bottom: 0.5rem;
 }
 
 .radio-input {
@@ -206,7 +235,6 @@ button,
           align-items: center;
   margin-left: auto;
   margin-right: auto;
-  padding-top: 1rem;
 }
 
 .diceImageDisplay {

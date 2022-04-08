@@ -1,5 +1,6 @@
 import { Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
+import BreadcrumbMenu from "./BreadcrumbMenu";
 
 const CharacterPage = ({
   race,
@@ -12,6 +13,8 @@ const CharacterPage = ({
 }) => {
   return (
     <div className="CharacterPage">
+      <BreadcrumbMenu activeItem={activeItem} setActiveItem={setActiveItem} />
+
       {(activeItem !== "character" || !activeItem) && (
         <div style={{ width: "70%" }}>
           <p style={{ fontSize: "1.2rem" }}>

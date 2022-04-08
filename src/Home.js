@@ -1,7 +1,7 @@
 import { Button } from "semantic-ui-react";
 import { Link } from "react-router-dom";
 import BreadcrumbMenu from "./BreadcrumbMenu";
-import wizard from "./images/wizard.png";
+import graywizard from "./images/graywizard.png";
 
 const Home = ({
   activeItem,
@@ -16,30 +16,24 @@ const Home = ({
   dndClass,
   setdndClass,
 }) => {
-  const resetCharacterBuilder = () => {
-    setRace(false);
-    setRaceData(false);
-    setdndClass(false);
-    setInBuild(false);
-    setBuildTopic(false);
-    setActiveItem("home");
-  };
-
   return (
     <div className="home">
       <BreadcrumbMenu activeItem={activeItem} setActiveItem={setActiveItem} />
       <h1>D&#38;D Character Creator</h1>
       <img
-        src={wizard}
+        // src={wizard}
+        src={graywizard}
         alt="wizard with a white beard and glowing staff"
         style={{ width: "10rem" }}
       />
       <h2>Welcome!</h2>
-      <p>Step into another world and adventure with friends.</p>
-      <p>
-        Using D&#38;D's 5th Edition API, we'll build a character for a role
-        playing game (RPG). Let's dive in!
-      </p>
+      <div className="home-text">
+        <p>Step into another world and adventure with friends.</p>
+        <p>
+          Using D&#38;D's 5th Edition API, we'll build a character for a role
+          playing game (RPG). Let's dive in!
+        </p>
+      </div>
       {/* If you aren't in a build, */}
       {!inBuild && (
         <div className="button-wrapper">
