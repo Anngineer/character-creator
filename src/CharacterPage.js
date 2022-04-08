@@ -27,14 +27,14 @@ const CharacterPage = ({
       )}
       {activeItem === "character" && (
         <div>
-          <h3>Well done, adventure!</h3>
+          <h2>Well done, adventure!</h2>
           <p>
             You have passed through the first trial of self-discovery and are
             ready to journey through this magical land!
           </p>
           <p>Here is a summary of your choices.</p>
           <div className="character-summary">
-            <h4>Character Sheet Info</h4>
+            <h3>Character Sheet Info</h3>
 
             {/* Race Line */}
             {race && (

@@ -19,9 +19,6 @@ body {
   font-family: "Source Sans Pro", sans-serif;
   -webkit-box-sizing: border-box;
           box-sizing: border-box;
-  scroll-behavior: smooth;
-  /*This will make it so when you click on a link, 
-        it will scroll to that spot rather than jump*/
   margin-left: auto;
   margin-right: auto;
 }
@@ -116,7 +113,6 @@ button,
 .button,
 .ui.button {
   margin: 1rem;
-  margin-top: 2rem;
 }
 
 .accordian,
@@ -130,6 +126,16 @@ button,
 .class-qualities {
   text-align: left;
   padding: 1.5rem;
+}
+
+.race-radio,
+.class-radio {
+  padding: 1rem;
+}
+
+.race-radio .radio-option,
+.class-radio .radio-option {
+  display: inline-block;
 }
 
 .radio-input {
@@ -172,6 +178,11 @@ button,
   }
 }
 
+.ability-table {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
 .diceSection {
   display: -webkit-box;
   display: -ms-flexbox;
@@ -186,6 +197,7 @@ button,
           align-items: center;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 1rem;
 }
 
 .diceImageDisplay {
@@ -198,6 +210,7 @@ button,
 .diceImage {
   width: 2rem;
   margin: 2rem;
+  margin-top: 1rem;
   -webkit-animation: shake 0.5s;
           animation: shake 0.5s;
   -webkit-animation-iteration-count: 1;
@@ -306,7 +319,9 @@ button,
   text-align: left;
   border: #d6cec3 solid 1px;
   border-radius: 4px;
-  padding: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
 }
 
 .character-summary h4 {

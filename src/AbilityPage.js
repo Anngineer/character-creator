@@ -43,12 +43,7 @@ const AbilityPage = ({
           {!doneRolling && (
             <p>Roll the die to let fate determine your abilities!</p>
           )}
-          {doneRolling && (
-            <p>
-              Fate has determined your abilities! <br /> Let's see your whole
-              character by clicking below.
-            </p>
-          )}
+          {doneRolling && <p>Fate has determined your abilities!</p>}
           <RollScripts
             rolls={rolls}
             setRolls={setRolls}

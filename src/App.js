@@ -8,6 +8,7 @@ import RacePage from "./RacePage";
 import ClassPage from "./ClassPage";
 import AbilityPage from "./AbilityPage";
 import CharacterPage from "./CharacterPage";
+import ScrollToTop from "./ScrollToTop";
 
 function App() {
   const [activeItem, setActiveItem] = useState("home");
@@ -31,10 +32,14 @@ function App() {
   const [buildTopic, setBuildTopic] = useState(null);
   return (
     <Router>
-      <div className="App">
-        <div className="main-section">
-          <SideMenu handleMenuClick={handleMenuClick} activeItem={activeItem} />
-          {/* <div>
+      <ScrollToTop>
+        <div className="App">
+          <div className="main-section">
+            <SideMenu
+              handleMenuClick={handleMenuClick}
+              activeItem={activeItem}
+            />
+            {/* <div>
             {inBuild && <p>inBuild : "true"</p>}
             {!inBuild && <p>inBuild isn't saved</p>}
             {!buildTopic && <p>buildTopic isn't saved</p>}
@@ -47,68 +52,69 @@ function App() {
             {dndClass && <p>Class is {dndClass}</p>}
             {raceData && <p>raceData is {raceData.raceName}</p>}
           </div> */}
-          <div className="content">
-            <Switch />
-            <Route exact path="/">
-              <Home
-                activeItem={activeItem}
-                setActiveItem={setActiveItem}
-                inBuild={inBuild}
-                setInBuild={setInBuild}
-                buildTopic={buildTopic}
-                setBuildTopic={setBuildTopic}
-                setRace={setRace}
-                race={race}
-                setRaceData={setRaceData}
-                dndClass={dndClass}
-                setdndClass={setdndClass}
-              />
-            </Route>
-            <Route exact path="/race">
-              <RacePage
-                activeItem={activeItem}
-                setActiveItem={setActiveItem}
-                race={race}
-                setRace={setRace}
-                raceData={raceData}
-                setRaceData={setRaceData}
-                setBuildTopic={setBuildTopic}
-              />
-            </Route>
-            <Route path="/classes">
-              <ClassPage
-                activeItem={activeItem}
-                setActiveItem={setActiveItem}
-                dndClass={dndClass}
-                setdndClass={setdndClass}
-                setBuildTopic={setBuildTopic}
-              />
-            </Route>
-            <Route path="/ability">
-              <AbilityPage
-                raceData={raceData}
-                race={race}
-                activeItem={activeItem}
-                setActiveItem={setActiveItem}
-                abilities={abilities}
-                setAbilities={setAbilities}
-                setBuildTopic={setBuildTopic}
-              />
-            </Route>
-            <Route path="/character">
-              <CharacterPage
-                race={race}
-                dndClass={dndClass}
-                abilities={abilities}
-                activeItem={activeItem}
-                setActiveItem={setActiveItem}
-                setBuildTopic={setBuildTopic}
-              />
-            </Route>
+            <div className="content">
+              <Switch />
+              <Route exact path="/">
+                <Home
+                  activeItem={activeItem}
+                  setActiveItem={setActiveItem}
+                  inBuild={inBuild}
+                  setInBuild={setInBuild}
+                  buildTopic={buildTopic}
+                  setBuildTopic={setBuildTopic}
+                  setRace={setRace}
+                  race={race}
+                  setRaceData={setRaceData}
+                  dndClass={dndClass}
+                  setdndClass={setdndClass}
+                />
+              </Route>
+              <Route exact path="/race">
+                <RacePage
+                  activeItem={activeItem}
+                  setActiveItem={setActiveItem}
+                  race={race}
+                  setRace={setRace}
+                  raceData={raceData}
+                  setRaceData={setRaceData}
+                  setBuildTopic={setBuildTopic}
+                />
+              </Route>
+              <Route path="/classes">
+                <ClassPage
+                  activeItem={activeItem}
+                  setActiveItem={setActiveItem}
+                  dndClass={dndClass}
+                  setdndClass={setdndClass}
+                  setBuildTopic={setBuildTopic}
+                />
+              </Route>
+              <Route path="/ability">
+                <AbilityPage
+                  raceData={raceData}
+                  race={race}
+                  activeItem={activeItem}
+                  setActiveItem={setActiveItem}
+                  abilities={abilities}
+                  setAbilities={setAbilities}
+                  setBuildTopic={setBuildTopic}
+                />
+              </Route>
+              <Route path="/character">
+                <CharacterPage
+                  race={race}
+                  dndClass={dndClass}
+                  abilities={abilities}
+                  activeItem={activeItem}
+                  setActiveItem={setActiveItem}
+                  setBuildTopic={setBuildTopic}
+                />
+              </Route>
+            </div>
           </div>
+          <Footer />
         </div>
-        <Footer />
-      </div>
+      </ScrollToTop>
     </Router>
   );
 }

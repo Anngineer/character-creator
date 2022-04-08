@@ -159,7 +159,7 @@ const AbilityTable = ({
             as={Link}
             to="/character"
             color="orange"
-            style={{ color: "#080a21" }}
+            style={{ color: "#080a21", marginTop: "0" }}
             onClick={() => handleAbilityStats()}
           >
             Click to Finish!
@@ -173,8 +173,12 @@ const AbilityTable = ({
         >
           {(matches) => (
             <div>
-              {matches.small && <div> {smallTables}</div>}
-              {matches.medium && <div>{largeTable}</div>}
+              {matches.small && (
+                <div className="ability-table"> {smallTables}</div>
+              )}
+              {matches.medium && (
+                <div className="ability-table">{largeTable}</div>
+              )}
             </div>
           )}
         </Media>

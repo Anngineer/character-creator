@@ -17,8 +17,8 @@ body {
   font-size: 1rem;
   font-family: "Source Sans Pro", sans-serif;
   box-sizing: border-box;
-  scroll-behavior: smooth; /*This will make it so when you click on a link, 
-        it will scroll to that spot rather than jump*/
+  // scroll-behavior: smooth; /*This will make it so when you click on a link,
+  // it will scroll to that spot rather than jump*/
 
   margin-left: auto;
   margin-right: auto;
@@ -102,7 +102,6 @@ button,
 .button,
 .ui.button {
   margin: 1rem;
-  margin-top: 2rem;
 }
 
 // Race Accordian
@@ -116,6 +115,16 @@ button,
 .class-qualities {
   text-align: left;
   padding: 1.5rem;
+}
+
+// Radios
+
+.race-radio,
+.class-radio {
+  padding: 1rem;
+  .radio-option {
+    display: inline-block;
+  }
 }
 
 .radio-input {
@@ -143,6 +152,7 @@ button,
 //     // color: #a5a6be !important;
 //   }
 // }
+
 // Light style
 .ui.styled.accordion,
 .ui.styled.accordion .accordion,
@@ -178,6 +188,13 @@ button,
   }
 }
 
+// Ability Page
+
+.ability-table {
+  margin-top: 1.5rem;
+  margin-bottom: 1rem;
+}
+
 .diceSection {
   display: flex;
   flex-direction: column;
@@ -185,6 +202,7 @@ button,
   align-items: center;
   margin-left: auto;
   margin-right: auto;
+  padding-top: 1rem;
 }
 .diceImageDisplay {
   flex-direction: row;
@@ -192,6 +210,7 @@ button,
 .diceImage {
   width: 2rem;
   margin: 2rem;
+  margin-top: 1rem;
 
   animation: shake 0.5s;
   animation-iteration-count: 1;
@@ -238,7 +257,9 @@ button,
   text-align: left;
   border: rgb(214, 206, 195) solid 1px;
   border-radius: 4px;
-  padding: 1rem;
+  padding: 1.5rem;
+  margin-bottom: 2rem;
+  margin-top: 2rem;
   h4 {
     text-align: center;
   }

@@ -42,11 +42,11 @@ const ClassPage = ({
             setActiveItem={setActiveItem}
           />
 
-          <h1>Classes</h1>
-          <p>Time to choose your occupation.</p>
+          <h2>Classes</h2>
+          <p>Time to choose your occupation!</p>
           <p>
             Devote yourself to being a healer or destroy to your enemies through
-            pure rage!
+            pure rage.
           </p>
           <p>
             Here are four possible paths for your character. Pick one at the

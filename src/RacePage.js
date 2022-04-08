@@ -44,7 +44,7 @@ const RacePage = ({
             setActiveItem={setActiveItem}
           />
 
-          <h1>Races</h1>
+          <h2>Races</h2>
           <p>Have you wanted to be elegant as an elf or strong as an orc?</p>
           <p>
             Explore four of the races. At the bottom of the page, choose which
