@@ -37,7 +37,11 @@ const Home = ({
       {/* If you aren't in a build, */}
       {!inBuild && (
         <div className="button-wrapper">
-          <Button basic color="orange">
+          <Button
+            basic
+            color="orange"
+            href={"https://anngineer.github.io/character-creator-intro/"}
+          >
             Intro Tutorial
           </Button>
           <Button
@@ -61,7 +65,11 @@ const Home = ({
         <>
           <h4>Note: It looks like you already are building a character.</h4>
           <div className="button-wrapper">
-            <Button basic color="orange">
+            <Button
+              basic
+              color="orange"
+              href={"https://anngineer.github.io/character-creator-intro/"}
+            >
               Intro Tutorial
             </Button>
             <Button
@@ -105,7 +113,11 @@ const Home = ({
         <>
           <h4>Note: It looks like you have a character in progress.</h4>
           <div className="button-wrapper">
-            <Button basic color="orange">
+            <Button
+              basic
+              color="orange"
+              href={"https://anngineer.github.io/character-creator-intro/"}
+            >
               Intro Tutorial
             </Button>
             <Button
@@ -150,7 +162,11 @@ const Home = ({
         <>
           <h4>Note: It looks like you already are building a character.</h4>
           <div className="button-wrapper">
-            <Button basic color="orange">
+            <Button
+              basic
+              color="orange"
+              href={"https://anngineer.github.io/character-creator-intro/"}
+            >
               Intro Tutorial
             </Button>
             <Button
@@ -197,7 +213,11 @@ const Home = ({
         <>
           <h4>Note: It looks like you already are building a character.</h4>
           <div className="button-wrapper">
-            <Button basic color="orange">
+            <Button
+              basic
+              color="orange"
+              href={"https://anngineer.github.io/character-creator-intro/"}
+            >
               Intro Tutorial
             </Button>
             <Button
@@ -247,7 +267,11 @@ const Home = ({
         buildTopic !== "character" && (
           <>
             <div className="button-wrapper">
-              <Button basic color="orange">
+              <Button
+                basic
+                color="orange"
+                href={"https://anngineer.github.io/character-creator-intro/"}
+              >
                 Intro Tutorial
               </Button>
 

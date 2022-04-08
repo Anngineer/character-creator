@@ -130,14 +130,19 @@ const CharacterPage = ({
           </div>
 
           <p>
-            Share <a href={"https://stackoverflow.com/"}> this website</a> with
-            friends or make a new character!
+            Share{" "}
+            <a href={"https://anngineer.github.io/character-creator/"}>
+              {" "}
+              this website
+            </a>{" "}
+            with friends or look at other websites developed by{" "}
+            <a href={"https://github.com/Anngineer"}>Anngineer</a>.
           </p>
           {/* Make the href the url of the site */}
           <Button
             color="orange"
             style={{ color: "#080a21" }}
-            href={"https://stackoverflow.com/"} // make this the url of this site
+            href={"https://anngineer.github.io/character-creator/"} // make this the url of this site
             // as={Link}
             // to="/"
             onClick={() => {
