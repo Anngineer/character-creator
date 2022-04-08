@@ -1,4 +1,5 @@
 import { BrowserRouter as Router, Route, Switch } from "react-router-dom";
+import { BrowserRouter } from "react-router-dom/cjs/react-router-dom.min";
 import { useState } from "react";
 import "./App.css";
 import Footer from "./Footer";
@@ -31,7 +32,7 @@ function App() {
   const [inBuild, setInBuild] = useState(null);
   const [buildTopic, setBuildTopic] = useState(null);
   return (
-    <Router>
+    <BrowserRouter basename={window.location.pathname || ""}>
       <ScrollToTop>
         <div className="App">
           <div className="main-section">
@@ -115,7 +116,7 @@ function App() {
           <Footer />
         </div>
       </ScrollToTop>
-    </Router>
+    </BrowserRouter>
   );
 }
 
