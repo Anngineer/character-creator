@@ -28,7 +28,7 @@ const Home = ({
   return (
     <div className="home">
       <BreadcrumbMenu activeItem={activeItem} setActiveItem={setActiveItem} />
-
+      <h1>D&#38;D Character Creator</h1>
       <img
         src={wizard}
         alt="wizard with a white beard and glowing staff"

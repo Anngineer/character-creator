@@ -29,14 +29,14 @@ body {
   background-color: #080a21;
   background-image: url("./images/bg14.jpg");
   background-position: top -160px left;
-  background-size: 1200px 1200px;
+  background-size: 1200px 2000px;
   background-repeat: no-repeat;
-  padding: 1rem;
+  // padding: 1rem;
   // padding-top: 1rem;
   position: relative;
-  height: 200vh;
-  min-height: 640px;
-  max-height: 3000px;
+  height: 1900px;
+  min-height: 940px;
+  // max-height: 3000px;
 
   display: flex;
   flex-direction: column;
@@ -55,6 +55,9 @@ body {
   .main-section {
     background-position: top -200px left;
     background-size: 1600px 1600px;
+    height: 1600px;
+
+    // min-height: 800px;
   }
 }
 
@@ -93,6 +96,7 @@ i.right.arrow.icon.divider {
   display: flex;
   flex-direction: row;
   width: 90%;
+  max-width: 600px;
   flex-wrap: wrap;
   justify-content: space-around;
   margin-left: auto;
@@ -102,6 +106,21 @@ button,
 .button,
 .ui.button {
   margin: 1rem;
+}
+
+// Race and Class Container
+@media (min-width: 900px) {
+  // .classes-page,
+  // .race-page {
+  //   padding-right: 4rem;
+  //   padding-left: 4rem;
+  // }
+  .race-accordian,
+  .class-accordian {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 // Race Accordian

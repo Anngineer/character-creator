@@ -27,13 +27,11 @@ body {
   background-color: #080a21;
   background-image: url("./images/bg14.jpg");
   background-position: top -160px left;
-  background-size: 1200px 1200px;
+  background-size: 1200px 2000px;
   background-repeat: no-repeat;
-  padding: 1rem;
   position: relative;
-  height: 200vh;
-  min-height: 640px;
-  max-height: 3000px;
+  height: 1900px;
+  min-height: 940px;
   display: -webkit-box;
   display: -ms-flexbox;
   display: flex;
@@ -57,6 +55,7 @@ body {
   .main-section {
     background-position: top -200px left;
     background-size: 1600px 1600px;
+    height: 1600px;
   }
 }
 
@@ -101,6 +100,7 @@ i.right.arrow.icon.divider {
       -ms-flex-direction: row;
           flex-direction: row;
   width: 90%;
+  max-width: 600px;
   -ms-flex-wrap: wrap;
       flex-wrap: wrap;
   -ms-flex-pack: distribute;
@@ -113,6 +113,15 @@ button,
 .button,
 .ui.button {
   margin: 1rem;
+}
+
+@media (min-width: 900px) {
+  .race-accordian,
+  .class-accordian {
+    max-width: 700px;
+    margin-left: auto;
+    margin-right: auto;
+  }
 }
 
 .accordian,

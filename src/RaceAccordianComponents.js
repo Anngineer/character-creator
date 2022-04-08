@@ -10,7 +10,10 @@ const RaceAccordianComponents = () => {
   const [activeSubIndex, setActiveSubIndex] = useState(-1);
 
   return (
-    <div style={{ color: "#080a21", textAlign: "left" }}>
+    <div
+      className="race-accordian"
+      style={{ color: "#080a21", textAlign: "left" }}
+    >
       <Accordion styled fluid>
         {/* First Group of Accordian */}
         <Level1RaceAccordion

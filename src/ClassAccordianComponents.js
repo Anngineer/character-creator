@@ -10,7 +10,10 @@ const ClassAccordianComponents = () => {
   const [activeSubIndex, setActiveSubIndex] = useState(null);
 
   return (
-    <div style={{ color: "#080a21", textAlign: "left" }}>
+    <div
+      className="class-accordian"
+      style={{ color: "#080a21", textAlign: "left" }}
+    >
       {/* <Accordion styled fluid inverted> */}
       <Accordion styled fluid>
         {/* First Group of Accordian */}
