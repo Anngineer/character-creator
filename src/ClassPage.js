@@ -46,9 +46,9 @@ const ClassPage = ({
           <div className="class-text">
             <p>Time to choose your occupation!</p>
             <p>
-              Devote yourself to being a healer or destroy to your enemies
-              through pure rage. Here are four possible paths for your
-              character. Pick one at the bottom.
+              Devote yourself to being a healer or destroy your enemies with
+              pure rage. Here are four possible paths for your character. Pick
+              one at the bottom.
             </p>
           </div>
           <ClassAccordianComponents />
