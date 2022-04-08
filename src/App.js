@@ -32,7 +32,13 @@ function App() {
   const [inBuild, setInBuild] = useState(null);
   const [buildTopic, setBuildTopic] = useState(null);
   return (
-    <BrowserRouter basename={window.location.pathname || ""}>
+    <BrowserRouter
+      basename={
+        `${window.location.pathname}/character-creator` ||
+        "" ||
+        window.location.pathname
+      }
+    >
       <ScrollToTop>
         <div className="App">
           <div className="main-section">

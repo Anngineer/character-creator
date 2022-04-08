@@ -131,12 +131,21 @@ const CharacterPage = ({
 
           <p>
             Share{" "}
-            <a href={"https://anngineer.github.io/character-creator/"}>
+            <a
+              href={"https://anngineer.github.io/character-creator/"}
+              style={{ color: "white", textDecoration: "underline" }}
+            >
               {" "}
               this website
             </a>{" "}
             with friends or look at other websites developed by{" "}
-            <a href={"https://github.com/Anngineer"}>Anngineer</a>.
+            <a
+              href={"https://github.com/Anngineer"}
+              style={{ color: "white", textDecoration: "underline" }}
+            >
+              Anngineer
+            </a>
+            .
           </p>
           {/* Make the href the url of the site */}
           <Button
